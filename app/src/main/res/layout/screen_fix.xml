@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="102dp"
+        android:layout_height="71dp"
+        android:backgroundTint="#F44336"
+        android:text="취소"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="558dp" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="93dp"
+        android:layout_height="72dp"
+        android:backgroundTint="#2196F3"
+        android:text="수정"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="558dp" />
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="62dp"
+        android:layout_height="44dp"
+        android:text="수량"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="485dp" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="62dp"
+        android:layout_height="44dp"
+        android:text="가격"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber4"
+        android:layout_width="134dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/black"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber3"
+        android:layout_width="134dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/black"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="485dp" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="198dp"
+        android:layout_height="39dp"
+        android:text="아이템명"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="223dp" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine3"
+        android:layout_width="208dp"
+        android:layout_height="135dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="아이템 고유정보"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="193dp"
+        android:layout_height="177dp"
+        android:background="@color/black"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="223dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/textView58"
+        android:layout_width="179dp"
+        android:layout_height="42dp"
+        android:text="수정하기"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="130dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="95dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="211dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_media_ff"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="198dp"
+        android:layout_height="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_media_rew"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="360dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="519dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:background="#3F51B5"
+        android:text="item sample"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="625dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_width="405dp"
+        android:layout_height="46dp"
+        android:text="user char name"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="147dp"
+        android:layout_height="35dp"
+        android:text="내 아이템"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="46dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
