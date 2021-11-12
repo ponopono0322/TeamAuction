@@ -7,18 +7,18 @@
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/login.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/login_screen.xml" value="0.1598731884057971" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_buying.xml" value="0.1598731884057971" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_check_item.xml" value="0.15" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_delete.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_fix.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_item_selling.xml" value="0.25" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_join.xml" value="0.2" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_login.xml" value="0.1598731884057971" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_buying.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_check_item.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_delete.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_fix.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_item_selling.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_join.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_login.xml" value="0.33" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_login_main.xml" value="0.25" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_main.xml" value="0.25" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_oction.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_main.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_oction.xml" value="0.33" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_select_main.xml" value="0.1598731884057971" />
-        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_selling.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_selling.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
