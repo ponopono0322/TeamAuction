@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:backgroundTint="#00ff0000"
+                android:id="@+id/back_signup"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:text="@string/signup"
+                android:textSize="30sp"
+                android:textColor="@color/little_dark_grey"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumsquareroundb" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_id"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_id"
+                android:id="@+id/signup_email"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"
+                android:fontFamily="@font/nanumsquareroundl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_password"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_password"
+                android:id="@+id/signup_password"
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"
+                android:fontFamily="@font/nanumsquareroundl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_confirm_pw"
+                android:textColor="@color/default_color"
+                android:textSize="14sp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_password"
+                android:id="@+id/confirm_pwbox"
+                android:inputType="textPassword"
+                android:fontFamily="@font/nanumsquareroundl"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_round_white"
+                android:text="@string/signup"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/signup_button"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/go_to_login"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_below="@id/signup_button"
+                android:layout_marginTop="30dp"
+                android:id="@+id/go_login_txt"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

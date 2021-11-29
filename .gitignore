@@ -36,6 +36,15 @@ proguard/
 # Android Studio captures folder
 captures/
 
+# Eclipse Metadata
+.metadata/
+ 
+# Mac OS X clutter
+*.DS_Store
+ 
+# Windows clutter
+Thumbs.db
+
 # IntelliJ
 *.iml
 .idea/workspace.xml
