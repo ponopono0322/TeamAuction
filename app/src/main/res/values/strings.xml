@@ -7,10 +7,22 @@
     <string name="go_password_get">비밀번호가 기억나지 않으세요?</string>
     <string name="login_text">로그인</string>
     <string name="signup">회원가입</string>
-    <string name="whatwantlogin">어떤 계정으로 로그인 해볼까요?</string>
+    <string name="whatwantlogin">로그인 할 계정을 선택해주세요</string>
     <string name="getpwfromemail">등록된 아이디가 있다면 이메일이 발송됩니다.\n이메일을 확인해주세요</string>
     <string name="go_to_login">이미 계정이 있다면 이곳을 눌러 로그인하세요</string>
     <string name="send_email">이메일 발송하기</string>
     <string name="wantfindid">찾고자 하는 아이디를 입력해주세요</string>
     <string name="recom_password">비밀번호 재발급</string>
+    <string name="wanttologout">로그아웃 하시겠어요?</string>
+    <string name="confirm_logout">로그아웃 되었습니다</string>
+    <string name="cancel_logout">로그아웃 취소</string>
+    <string name="say_yes">네</string>
+    <string name="say_no">아니오</string>
+    <string name="notice">알림</string>
+    <string name="access_account">계정에 로그인 하시겠어요?</string>
+    <string name="cancel_access_account">접속을 취소했습니다</string>
+    <string name="confirm_access_account">접속에 성공했습니다</string>
+    <string name="delete_account">계정을 삭제하시겠어요?</string>
+    <string name="select_publisher">게임 선택</string>
+
 </resources>

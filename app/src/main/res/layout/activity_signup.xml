@@ -30,8 +30,8 @@
                 android:text="@string/signup"
                 android:textSize="30sp"
                 android:textColor="@color/little_dark_grey"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/nanumsquareroundb" />
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrmedium" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +47,8 @@
                 android:textColor="@color/default_color"
                 android:layout_marginStart="56dp"
                 android:layout_marginTop="40dp"
-                android:fontFamily="@font/nanumsquareroundb"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
 
             <EditText
                 android:layout_width="300dp"
@@ -59,7 +60,8 @@
                 android:textSize="16sp"
                 android:textColor="@color/default_color"
                 android:backgroundTint="@color/default_color"
-                android:fontFamily="@font/nanumsquareroundl"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +71,8 @@
                 android:textColor="@color/default_color"
                 android:layout_marginStart="56dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/nanumsquareroundb"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
 
             <EditText
                 android:layout_width="300dp"
@@ -81,7 +84,8 @@
                 android:textSize="16sp"
                 android:textColor="@color/default_color"
                 android:backgroundTint="@color/default_color"
-                android:fontFamily="@font/nanumsquareroundl"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,7 +95,8 @@
                 android:textSize="14sp"
                 android:layout_marginStart="56dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/nanumsquareroundb"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
 
             <EditText
                 android:layout_width="300dp"
@@ -100,7 +105,8 @@
                 android:hint="@string/hint_password"
                 android:id="@+id/confirm_pwbox"
                 android:inputType="textPassword"
-                android:fontFamily="@font/nanumsquareroundl"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"
                 android:textSize="16sp"
                 android:textColor="@color/default_color"
                 android:backgroundTint="@color/default_color"/>
@@ -123,7 +129,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:id="@+id/signup_button"
-                android:fontFamily="@font/nanumsquareroundb"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrmedium"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,7 +142,8 @@
                 android:layout_below="@id/signup_button"
                 android:layout_marginTop="30dp"
                 android:id="@+id/go_login_txt"
-                android:fontFamily="@font/nanumsquareroundb"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
 
         </RelativeLayout>
     </LinearLayout>

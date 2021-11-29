@@ -11,5 +11,23 @@
     <font android:fontStyle="normal"
         android:fontWeight="700"
         android:font="@font/nanumsquareroundl"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrblack"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrbold"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrlight"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrmedium"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrregular"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/notosanskrthin"/>
 
 </font-family>

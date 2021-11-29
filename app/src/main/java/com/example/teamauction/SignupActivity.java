@@ -20,7 +20,9 @@ public class SignupActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                Intent intent = new Intent(SignupActivity.this, StartActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -28,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),StartActivity.class);
+                Intent intent = new Intent(SignupActivity.this,StartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -38,7 +40,7 @@ public class SignupActivity extends AppCompatActivity {
         goLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

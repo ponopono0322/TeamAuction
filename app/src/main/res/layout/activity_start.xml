@@ -29,7 +29,8 @@
             android:layout_below="@+id/logo"
             android:layout_centerInParent="true"
             android:layout_marginTop="150dp"
-            android:fontFamily="@font/nanumsquareroundb"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskrmedium"
             android:text="@string/login_text"
             android:textSize="16sp" />
 
@@ -42,7 +43,8 @@
             android:layout_below="@+id/go_login"
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/nanumsquareroundb"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskrmedium"
             android:text="@string/signup"
             android:textSize="16sp" />
     </RelativeLayout>

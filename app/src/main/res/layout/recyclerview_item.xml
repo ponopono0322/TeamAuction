@@ -11,13 +11,14 @@
         android:orientation="horizontal"
         android:background="@drawable/layer_round">
 
-        <RadioButton
+        <CheckBox
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:checked="false"
+            android:buttonTint="@color/little_dark_grey"
             android:id="@+id/select_account"/>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -33,7 +34,8 @@
                 android:gravity="center_vertical"
                 android:id="@+id/title"
                 android:textSize="12sp"
-                android:fontFamily="@font/nanumsquareroundl"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -45,7 +47,8 @@
                 android:gravity="center_vertical"
                 android:id="@+id/desc"
                 android:textSize="12sp"
-                android:fontFamily="@font/nanumsquareroundl"/>
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
         </LinearLayout>
         <View
             android:layout_height="0dp"
