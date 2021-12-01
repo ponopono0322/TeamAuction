@@ -41,11 +41,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AuctionScreen"/>
-        <activity android:name=".ItemCheckScreen"/>
-        <activity android:name=".SellingItemScreen"/>
-        <activity
-            android:name=".MainActivity"
-           />
+        <!--여기서부터 규인님이 만드신 것들-->
+        <activity android:name=".AuctionScreen"
+            android:exported="false"/>
+        <activity android:name=".ItemCheckScreen"
+            android:exported="false"/>
+        <activity android:name=".SellingItemScreen"
+            android:exported="false"/>
     </application>
 </manifest>

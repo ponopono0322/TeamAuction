@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 last_pos = SimpleTextAdapter.lastCheckedPos;
                 RecyclerItem item = mList.get(last_pos);
                 Toast.makeText(MainActivity.this, item.getTitle()+" data access", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, AuctionScreen.class);
+                startActivity(intent);
             }
         });
 
