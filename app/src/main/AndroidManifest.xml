@@ -9,21 +9,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamAuction">
-        <!--<meta-data
-            android:name="com.google.android.actions"/>
-            android:resource="@xml/LoginScreen" />
-            !-->
-        <activity android:name=".AuctionScreen"
+        <activity
+            android:name=".CharacterSelectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PublisherLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PopupActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".PasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ItemCheckScreen"/>
-        <activity android:name=".SellingItemScreen"/>
-        <activity
-            android:name=".MainActivity"
-           />
+        <!--여기서부터 규인님이 만드신 것들-->
+        <activity android:name=".AuctionScreen"
+            android:exported="false"/>
+        <activity android:name=".ItemCheckScreen"
+            android:exported="false"/>
+        <activity android:name=".SellingItemScreen"
+            android:exported="false"/>
     </application>
 </manifest>
