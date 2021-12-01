@@ -2,6 +2,8 @@ package com.example.teamauction;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
+
 public class ListViewItem {
     private Drawable icon ;
     private String text ;

@@ -74,8 +74,8 @@ public class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.Vi
                 public void onClick(View view) {
                     AlertDialog.Builder oDialog = new AlertDialog.Builder(view.getContext());
 
-                    oDialog.setMessage("계정을 삭제하시겠어요?")
-                            .setTitle("알림")
+                    oDialog.setMessage("정말로 계정을 삭제하시겠어요?")
+                            .setTitle("계정 삭제 알림")
                             .setPositiveButton("아니오", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamAuction">
         <activity
+            android:name=".CharacterSelectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PublisherLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddAccountActivity"
             android:exported="false" />
         <activity

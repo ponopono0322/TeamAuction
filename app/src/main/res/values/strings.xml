@@ -23,6 +23,8 @@
     <string name="cancel_access_account">접속을 취소했습니다</string>
     <string name="confirm_access_account">접속에 성공했습니다</string>
     <string name="delete_account">계정을 삭제하시겠어요?</string>
+    <string name="select_game">계정 로그인하기</string>
     <string name="select_publisher">게임 선택</string>
+    <string name="select_game_character">캐릭터 선택</string>
 
 </resources>

@@ -8,22 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -48,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         if (result.getResultCode() == RESULT_OK) {
                             Intent intent = result.getData();
                             int code_get = intent.getIntExtra("result",0);
+
                             if(code_get == 0){
                                 Toast.makeText(MainActivity.this, getString(R.string.cancel_logout), Toast.LENGTH_SHORT).show();
                             }
@@ -62,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else if(code_get == 3){
                                 Toast.makeText(MainActivity.this, getString(R.string.confirm_access_account), Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+
                             }
                         }
                     }
@@ -117,16 +111,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 아이템 추가.
-        addItem("Box", "Account Box Black 36dp", Boolean.TRUE);
+        addItem("Game_1", "Character_1", Boolean.TRUE);
         // 두 번째 아이템 추가.
-        addItem("Circle", "Account Circle Black 36dp", Boolean.FALSE);
+        addItem("Game_2", "Character_2", Boolean.FALSE);
         // 세 번째 아이템 추가.
-        addItem("Ind", "Assignment Ind Black 36dp", Boolean.FALSE);
+        addItem("Game_3", "Character_1", Boolean.FALSE);
         // 네 번째 아이템 추가.
         // addItem(getDrawable(R.drawable.ic_baseline_account_box_24), "Ret", "Account Rect Balck 36dp");
-        addItem("RCT", "ic_baseline_account_box_24", Boolean.FALSE);
 
-        mAdapter.notifyDataSetChanged() ;
+        mAdapter.notifyDataSetChanged();
     }
 
     public void addItem(String title, String desc, Boolean checkbox) {

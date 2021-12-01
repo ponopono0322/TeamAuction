@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddAccountActivity">
+    tools:context=".CharacterSelectActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_arrow_back_ios_24"
                 android:background="#00ff0000"
-                android:id="@+id/back_account"/>
+                android:id="@+id/cancel_account_add"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,14 +30,14 @@
                 android:includeFontPadding="false"
                 android:textSize="30sp"
                 android:textColor="@color/little_dark_grey"
-                android:text="@string/select_publisher"
+                android:text="@string/select_game_character"
                 android:fontFamily="@font/notosanskrbold">
             </TextView>
 
         </LinearLayout>
 
         <ListView
-            android:id="@+id/listview1"
+            android:id="@+id/listview2"
             android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="400dp"
@@ -56,10 +56,10 @@
                 android:layout_marginTop="40dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button_round"
-                android:text="@string/select_game"
+                android:text="@string/login_text"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:id="@+id/login_button_publisher"
+                android:id="@+id/select_game_character"
                 android:includeFontPadding="false"
                 android:fontFamily="@font/notosanskrmedium"/>
         </LinearLayout>
