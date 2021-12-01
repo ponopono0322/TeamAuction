@@ -37,7 +37,7 @@
         android:text="구매"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="522dp" />
+        tools:layout_editor_absoluteY="509dp" />
 
     <Button
         android:id="@+id/button11"
@@ -47,7 +47,7 @@
         android:text="취소"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="522dp" />
+        tools:layout_editor_absoluteY="509dp" />
 
     <ImageView
         android:id="@+id/imageView2"

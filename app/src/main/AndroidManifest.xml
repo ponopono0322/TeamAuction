@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamAuction">
-        <meta-data
-            android:name="com.google.android.actions"
+        <!--<meta-data
+            android:name="com.google.android.actions"/>
             android:resource="@xml/LoginScreen" />
-
-        <activity
-            android:name=".MainActivity"
+            !-->
+        <activity android:name=".AuctionScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ItemCheckScreen"/>
+        <activity android:name=".SellingItemScreen"/>
+        <activity
+            android:name=".MainActivity"
+           />
     </application>
-
 </manifest>

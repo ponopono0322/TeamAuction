@@ -16,18 +16,6 @@
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="61dp" />
 
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="405dp"
-        android:layout_height="46dp"
-        android:text="user char name"
-        android:textAlignment="center"
-        android:textIsSelectable="false"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="0dp" />
-
     <Button
         android:id="@+id/button14"
         android:layout_width="105dp"
