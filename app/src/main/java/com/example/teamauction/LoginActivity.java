@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         login_emailbox= findViewById(R.id.login_emailbox);
         login_pwbox= findViewById(R.id.login_pwbox);
         login_button= findViewById(R.id.login_button);  // 로그인 버튼
-        go_fpassword_text= findViewById(R.id.go_fpassword_text);    // 계정찾기 버튼
+        go_fpassword_text= findViewById(R.id.go_fpassword_text);    // 비밀번호가 기억나지 않으세요? (계정찾기 버튼)
         return_signup= findViewById(R.id.return_signup);    // 계정이 없으신가요? 버튼
 
         // 계정이 없으신가요? 클릭 시 수행(회원가입 창으로 넘어감)
@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         // 로그인버튼 클릭 시 수행
         login_button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -90,28 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-    /*
-        Button button = findViewById(R.id.login_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-*/
-        TextView return_signup_textview = findViewById(R.id.return_signup);
-        return_signup_textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
-        TextView return_find_password = findViewById(R.id.go_fpassword_text);
+        TextView return_find_password = findViewById(R.id.go_fpassword_text);   // 비밀번호가 기억나지 않으세요? (계정 찾기버튼)
         return_find_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

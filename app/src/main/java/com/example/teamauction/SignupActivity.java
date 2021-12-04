@@ -21,9 +21,9 @@ import org.json.JSONObject;
 // 회원가입 액티비티
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText signup_email, signup_password, confirm_pwbox;  // confirm_pwbox 비교설정아직안함
+    private EditText signup_email, signup_password, confirm_pwbox;
     private Button signup_button;
-    private TextView go_login_txt;//////////////////////////////////// 아직 설정 안함
+    private TextView go_login_txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,17 @@ public class SignupActivity extends AppCompatActivity {
 
         // 회원가입 버튼을 클릭할 시 수행
         signup_button = findViewById(R.id.signup_button);
-        signup_button.setOnClickListener(new View.OnClickListener(){
+        signup_button.setOnClickListener(new View.OnClickListener() {
            @Override
-           public void onClick(View view){  // EditText에 현재 입력되어있는 값을 get해온다.
+           public void onClick(View view){
+               // EditText에 현재 입력되어있는 값을 get해온다.
                String userID = signup_email.getText().toString();
                String userPassword = signup_password.getText().toString();
+               String confirmPassword = confirm_pwbox.getText().toString();
+               if(!userPassword.equals(confirmPassword)){// userPassword와 confirmPassword의 문자열 비교. 둘이 같지 않다면 "비밀번호 재입력부분을 확인해주세요." 문구가 나옴.
+                   Toast.makeText(getApplicationContext(), "비밀번호 재입력부분을 확인해주세요.", Toast.LENGTH_SHORT).show();
+                   return;
+               }
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     @Override
@@ -78,25 +84,15 @@ public class SignupActivity extends AppCompatActivity {
                 finish();
             }
         });
-/*
-        Button SignUpButton = findViewById(R.id.signup_button);
-        SignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this,StartActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
- */
         TextView goLoginButton = findViewById(R.id.go_login_txt);
         goLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);//로그인 화면으로 이동함.
                 startActivity(intent);
                 finish();
             }
         });
+
     }
 }
