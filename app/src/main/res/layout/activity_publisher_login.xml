@@ -87,17 +87,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_publisher_button"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/button_round"
-                android:layout_centerHorizontal="true"
-                android:text="@string/login_text"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:id="@+id/login_publisher_button"
+                android:fontFamily="@font/notosanskrmedium"
                 android:includeFontPadding="false"
-                android:fontFamily="@font/notosanskrmedium"/>
+                android:text="@string/login_text"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
         </RelativeLayout>
     </LinearLayout>
