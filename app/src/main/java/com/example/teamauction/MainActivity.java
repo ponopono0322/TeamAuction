@@ -1,13 +1,5 @@
 package com.example.teamauction;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +7,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -113,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 아이템 추가.
-        addItem("Game_1", "Character_1", Boolean.TRUE);
+        addItem("MapleStory", "Character_1", Boolean.TRUE);
         // 두 번째 아이템 추가.
-        addItem("Game_2", "Character_2", Boolean.FALSE);
+        addItem("DF", "Character_2", Boolean.FALSE);
         // 세 번째 아이템 추가.
-        addItem("Game_3", "Character_1", Boolean.FALSE);
+        addItem("LostArk", "Character_1", Boolean.FALSE);
         // 네 번째 아이템 추가.
         // addItem(getDrawable(R.drawable.ic_baseline_account_box_24), "Ret", "Account Rect Balck 36dp");
 
