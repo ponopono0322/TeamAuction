@@ -68,9 +68,21 @@ public class PublisherLoginActivity extends AppCompatActivity {
                         }
                     }
                 };
-                GameLoginRequest gameloginRequest = new GameLoginRequest(gameNamee, gameID, gamePW, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(PublisherLoginActivity.this);
-                queue.add(gameloginRequest);
+                if(gameNamee.equals("MapleStory")) {    //MapleStory를 선택하면 MapleStory 계정으로 로그인을 해야한다.
+                    MapleStoryLoginRequest maplestoryloginRequest = new MapleStoryLoginRequest(gameID, gamePW, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(PublisherLoginActivity.this);
+                    queue.add(maplestoryloginRequest);
+                }
+                if(gameNamee.equals("DF")) {    //DF를 선택하면 DF 계정으로 로그인을 해야한다.
+                    DFLoginRequest dfloginRequest = new DFLoginRequest(gameID, gamePW, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(PublisherLoginActivity.this);
+                    queue.add(dfloginRequest);
+                }
+                if(gameNamee.equals("LostArk")) {   //LostArk를 선택하면 LostArk 계정으로 로그인을 해야한다.
+                    LostArkLoginRequest lostarkloginRequest = new LostArkLoginRequest(gameID, gamePW, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(PublisherLoginActivity.this);
+                    queue.add(lostarkloginRequest);
+                }
             }
         });
 

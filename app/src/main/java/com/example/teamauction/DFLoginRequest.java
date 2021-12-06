@@ -7,17 +7,16 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GameLoginRequest extends StringRequest{
+public class DFLoginRequest extends StringRequest{
 
     // 서버 URL 설정(PHP 파일 연동)
-    final static private String URL = "http://ualsgur98.dothome.co.kr/usergamelogin.php";
+    final static private String URL = "http://ualsgur98.dothome.co.kr/DFLogin.php";
     private Map<String, String> map;
 
-    public GameLoginRequest(String gameName, String gameID, String gamePW, Response.Listener<String> listener) {
+    public DFLoginRequest(String gameID, String gamePW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
-        map.put("gameName", gameName);
         map.put("gameID", gameID);
         map.put("gamePW", gamePW);
     }
