@@ -125,14 +125,13 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editTextTextMultiLine"
+            <TextView
+                android:id="@+id/textview32"
                 android:layout_width="match_parent"
                 android:layout_height="135dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:text="아이템 고유정보" />
+                android:text="아이템 고유정보"
+                android:textIsSelectable="false"
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>

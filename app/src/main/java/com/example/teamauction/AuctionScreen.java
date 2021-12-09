@@ -23,7 +23,7 @@ public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
 
-//경매장 리스트 만드는중
+    //경매장 리스트 만드는중
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,23 @@ public class AuctionScreen extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Ind", "Assignment Ind Black 36dp") ;
 
+        //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
+        Button buyingbutton = findViewById(R.id.buyButton);
+        buyingbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = listview.getCheckedItemPosition();
+                if (pos > -1) {
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String ItemCode = item.getText();
+                    Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
+                    intent.putExtra("data", ItemCode);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
          //판매중, 내 아이템 이동버튼 구현
         moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼
         moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼
@@ -60,7 +77,6 @@ public class AuctionScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         moveMyitemButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

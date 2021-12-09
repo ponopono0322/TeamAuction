@@ -25,7 +25,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/quantityBox"
             android:layout_width="134dp"
             android:layout_height="49dp"
             android:backgroundTint="@color/black"
@@ -104,7 +104,7 @@
         tools:layout_editor_absoluteX="2dp">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/buyingImage"
             android:layout_width="175dp"
             android:layout_height="177dp"
             android:background="@color/black"
@@ -125,14 +125,13 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editTextTextMultiLine"
+            <TextView
+                android:id="@+id/textview32"
                 android:layout_width="match_parent"
                 android:layout_height="135dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:text="아이템 고유정보" />
+                android:text="아이템 고유정보"
+                android:textIsSelectable="false"
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -147,7 +146,7 @@
         tools:layout_editor_absoluteX="1dp">
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/textView213"
             android:layout_width="62dp"
             android:layout_height="44dp"
             android:text="가격"
@@ -157,7 +156,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextNumber2"
+            android:id="@+id/costBox"
             android:layout_width="134dp"
             android:layout_height="49dp"
             android:backgroundTint="@color/black"
