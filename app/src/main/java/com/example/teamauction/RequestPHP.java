@@ -23,6 +23,16 @@ public class RequestPHP extends StringRequest {
         map.put("userPassword", userPassword);
     }
 
+    // 게임 넘겨주기
+    public RequestPHP(String URL, String gameName, String gameID, String gamePW, Response.Listener<String> listener) {
+        super(Method.POST, URL, listener, null);
+
+        map = new HashMap<>();
+        map.put("gameName", gameName);
+        map.put("gameID", gameID);
+        map.put("gamePW", gamePW);
+    }
+
     // 로그인
     public RequestPHP(String URL, String userID, String userPW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);

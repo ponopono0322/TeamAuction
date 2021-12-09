@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
 
                         } catch (JSONException e) { // 로그인 오류가 난 것이라면
-                            //e.printStackTrace();
+                            e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "등록되지 않은 계정입니다", Toast.LENGTH_SHORT).show();
                         }
 
