@@ -1,6 +1,7 @@
 package com.example.teamauction;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,42 +23,32 @@ public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
 
-    String[] names = {"아이템 이름들"}; // 아이템 이름들
-    Integer[] images = {R.drawable.ic_launcher_background}; // 아이템 이미지
 //경매장 리스트 만드는중
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_auction);
 
-        ListView listView=(ListView)findViewById(R.id.list);
+        ListView listview ;
+        AuctionAdapter adapter;
 
+        // Adapter 생성
+        adapter = new AuctionAdapter() ;
 
-         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), names[+position], Toast.LENGTH_SHORT).show();
-            }
-         });
-         class CustomList extends ArrayAdapter<String> {
-             private final Activity context;
-             public CustomList(Activity context){
-                 super(context, R.layout.auction_list_item, names);
-                 this.context = context;
-             }
-             @Override
-             public View getView(int position, View view, ViewGroup parent) {
-                 LayoutInflater inflater = context.getLayoutInflater();
-                 View rowView= inflater.inflate(R.layout.auction_list_item, null, true);
-                 ImageView imageView =(ImageView) rowView.findViewById(R.id.image);
-                 TextView name=(TextView) rowView.findViewById(R.id.name);
-                 TextView cost=(TextView) rowView.findViewById(R.id.cost);
-                 name.setText(names[position]);
-                 imageView.setImageResource(images[position]);
-                 cost.setText(position);
-                 return rowView;
-             }
-         }
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.list);
+        listview.setAdapter(adapter);
+
+        // 첫 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+               "Box", "Account Box Black 36dp") ;
+        // 두 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                "Circle", "Account Circle Black 36dp") ;
+        // 세 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                "Ind", "Assignment Ind Black 36dp") ;
+
          //판매중, 내 아이템 이동버튼 구현
         moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼
         moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼
