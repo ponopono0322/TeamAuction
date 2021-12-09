@@ -65,7 +65,6 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
 
@@ -107,21 +106,21 @@ public class SignupActivity extends AppCompatActivity {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             //회원가입 성공시
                             if (success) {
-
                                 if(userPass.equals(userPwck)){
-
+                                    Toast.makeText(getApplicationContext(), "계정이 정상적으로 등록되었습니다", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(SignupActivity.this, StartActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
-
-                                Toast.makeText(getApplicationContext(), "계정이 정상적으로 등록되었습니다", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignupActivity.this, StartActivity.class);
-                                startActivity(intent);
-                                finish();
+                                else{
+                                    Toast.makeText(getApplicationContext(), "비밀번호가 같지 않습니다", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
                                 //회원가입 실패시
                             } else {
                                 Toast.makeText(getApplicationContext(), "계정 생성에 실패했습니다", Toast.LENGTH_SHORT).show();
