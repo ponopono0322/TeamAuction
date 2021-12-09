@@ -73,14 +73,4 @@ public class CustomChoiceListViewAdapter extends BaseAdapter {
 
         listViewItemList.add(item);
     }
-    public void addItem(Drawable icon, String text, String msg) {
-        ListViewItem item = new ListViewItem();
-
-        item.setIcon(icon);
-        item.setText(text);
-        item.setMassage(msg);
-
-        listViewItemList.add(item);
-    }
-
 }

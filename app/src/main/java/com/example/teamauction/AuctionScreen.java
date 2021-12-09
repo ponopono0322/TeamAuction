@@ -31,10 +31,10 @@ public class AuctionScreen extends AppCompatActivity {
         setContentView(R.layout.screen_auction);
 
         ListView listview ;
-        CustomChoiceListViewAdapter adapter;
+        AuctionAdapter adapter;
 
         // Adapter 생성
-        adapter = new CustomChoiceListViewAdapter() ;
+        adapter = new AuctionAdapter() ;
 
 
         // 리스트뷰 참조 및 Adapter달기
@@ -42,13 +42,13 @@ public class AuctionScreen extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                "Box", "Account Box Black 36dp") ;
         // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Circle", "Account Circle Black 36dp") ;
         // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Ind", "Assignment Ind Black 36dp") ;
 
         //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
