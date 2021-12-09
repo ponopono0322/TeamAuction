@@ -36,8 +36,80 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_name"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="10dp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_name"
+                android:id="@+id/signup_name"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_phone"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="10dp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_phone"
+                android:id="@+id/signup_phone"
+                android:inputType="phone"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_email"
+                android:textSize="14sp"
+                android:textColor="@color/default_color"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="10dp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrlight"/>
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/hint_email"
+                android:id="@+id/signup_email"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp"
+                android:textColor="@color/default_color"
+                android:backgroundTint="@color/default_color"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskrthin"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -46,22 +118,40 @@
                 android:textSize="14sp"
                 android:textColor="@color/default_color"
                 android:layout_marginStart="56dp"
-                android:layout_marginTop="40dp"
                 android:includeFontPadding="false"
                 android:fontFamily="@font/notosanskrlight"/>
 
-            <EditText
+            <LinearLayout
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:hint="@string/hint_id"
-                android:id="@+id/signup_email"
-                android:inputType="textEmailAddress"
-                android:textSize="16sp"
-                android:textColor="@color/default_color"
-                android:backgroundTint="@color/default_color"
-                android:includeFontPadding="false"
-                android:fontFamily="@font/notosanskrthin"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <EditText
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="@string/hint_id"
+                    android:id="@+id/signup_id"
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    android:textColor="@color/default_color"
+                    android:backgroundTint="@color/default_color"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskrthin"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/check_id"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_round"
+                    android:text="@string/check_con"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="-3dp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskrlight"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
