@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,10 +31,11 @@ public class AuctionScreen extends AppCompatActivity {
         setContentView(R.layout.screen_auction);
 
         ListView listview ;
-        AuctionAdapter adapter;
+        CustomChoiceListViewAdapter adapter;
 
         // Adapter 생성
-        adapter = new AuctionAdapter() ;
+        adapter = new CustomChoiceListViewAdapter() ;
+
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.list);
@@ -84,5 +86,6 @@ public class AuctionScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

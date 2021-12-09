@@ -27,6 +27,7 @@ public class BuyingScreen extends AppCompatActivity {
         yes_btn = findViewById(R.id.check_yes);
         no_btn = findViewById(R.id.check_no);
 
+        //예 버튼을 눌렀을때 값 저장
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

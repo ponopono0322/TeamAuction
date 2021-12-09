@@ -67,14 +67,14 @@ public class AuctionAdapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(Drawable icon, String title, String desc) {
+    /*public void addItem(Drawable icon, String title) {
         ItemListAuction item = new ItemListAuction();
 
-        item.setIcon(icon);
-        item.setName(title);
-        item.setDesc(desc);
+        //item.setIcon(icon);
+        //item.setName(title);
+        //item.setDesc(desc);
 
         itemListAuction.add(item);
-    }
+    }*/
 }
 
