@@ -40,6 +40,13 @@ public class RequestPHP extends StringRequest {
         map.put("userID", userID);
     }
 
+    // 게임 목록
+    public RequestPHP(String URL, Response.Listener<String> listener) {
+        super(Method.POST, URL, listener,null);
+
+        map = new HashMap<>();
+    }
+
     @Override
     protected Map<String, String>getParams() throws AuthFailureError {
         return map;
