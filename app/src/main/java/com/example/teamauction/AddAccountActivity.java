@@ -26,7 +26,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddAccountActivity extends AppCompatActivity {
+
+    private CustomChoiceListViewAdapter adapter;
+    private ListView listview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +49,6 @@ public class AddAccountActivity extends AppCompatActivity {
             }
         });
 
-        ListView listview ;
-        CustomChoiceListViewAdapter adapter;
-
         // Adapter 생성
         adapter = new CustomChoiceListViewAdapter() ;
 
@@ -58,21 +61,18 @@ public class AddAccountActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
-                    boolean success = jsonResponse.getBoolean("success");
-                    JSONArray gamelist = jsonResponse.getJSONArray("gamelist");
-                    if (success) {
-                        for(int i=0; i<gamelist.length(); i++) {
-                            JSONObject item = gamelist.getJSONObject(i);
-                            String gameName = item.getString("gamename");
-                            adapter.addItem(ContextCompat.getDrawable(AddAccountActivity.this, R.drawable.ic_baseline_account_box_24),
-                                    gameName);
-                        }
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                    JSONArray games = jsonResponse.getJSONArray("GameList");
+                    for (int i = 0; i < games.length(); i++) {
+                        JSONObject item = games.getJSONObject(i);
+                        String gameName = item.getString("GameName");
+                        //String gameNum = item.getString("GameNum");
+                        adapter.addItem(ContextCompat.getDrawable(AddAccountActivity.this,
+                                R.drawable.ic_baseline_account_box_24),gameName);
                     }
-                } catch (JSONException e) {
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -81,7 +81,7 @@ public class AddAccountActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(AddAccountActivity.this);
         queue.add(validateRequest);
 
-
+        /*
         // 첫 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
                 "MapleStory");
@@ -91,7 +91,7 @@ public class AddAccountActivity extends AppCompatActivity {
         // 세 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
                 "LostArk");
-
+        */
         Button publisher_login = findViewById(R.id.login_button_publisher);
         publisher_login.setOnClickListener(new View.OnClickListener() {
             @Override
