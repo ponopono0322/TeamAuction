@@ -58,10 +58,10 @@ public class AuctionScreen extends AppCompatActivity {
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    String ItemCode = item.getText();
+                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    //String ItemCode = item.getText();
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
-                    intent.putExtra("data", ItemCode);
+                    //intent.putExtra("data", ItemCode);
                     startActivity(intent);
                     finish();
                 }

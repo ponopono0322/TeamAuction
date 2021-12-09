@@ -48,5 +48,8 @@
             android:exported="false"/>
         <activity android:name=".SellingItemScreen"
             android:exported="false"/>
+        <activity android:name=".BuyingScreen"
+            android:exported="false"/>
+
     </application>
 </manifest>
