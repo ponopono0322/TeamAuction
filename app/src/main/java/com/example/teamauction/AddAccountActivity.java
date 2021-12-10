@@ -35,24 +35,24 @@ public class AddAccountActivity extends AppCompatActivity {
         });
 
         ListView listview ;
-        CustomChoiceListViewAdapter adapter;
+        AuctionAdapter adapter;
 
         // Adapter 생성
-        adapter = new CustomChoiceListViewAdapter() ;
+        adapter = new AuctionAdapter() ;
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.listview1);
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Game_1");
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Game_1","");
         // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Game_2");
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Game_2","");
         // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Game_3");
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Game_3","");
 
         Button publisher_login = findViewById(R.id.login_button_publisher);
         publisher_login.setOnClickListener(new View.OnClickListener() {

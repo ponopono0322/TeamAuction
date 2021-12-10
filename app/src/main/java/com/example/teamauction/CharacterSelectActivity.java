@@ -28,27 +28,27 @@ public class CharacterSelectActivity extends AppCompatActivity {
         });
 
         ListView listview;
-        CustomChoiceListViewAdapter adapter;
+        AuctionAdapter adapter;
 
         // Adapter 생성
-        adapter = new CustomChoiceListViewAdapter() ;
+        adapter = new AuctionAdapter() ;
 
         // 리스트뷰 참조 및 Adapter 달기
         listview = (ListView) findViewById(R.id.listview2);
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_1") ;
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Character_1","") ;
         // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_2") ;
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Character_2","") ;
         // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_3") ;
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Character_3","") ;
         // 네 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_4") ;
+        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
+                "Character_4","") ;
 
         Intent game_account_info = getIntent();
         got_data = (GameAccountInfo) game_account_info.getSerializableExtra("game_account");
