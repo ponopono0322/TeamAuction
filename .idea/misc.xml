@@ -4,16 +4,40 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.19635416666666666" />
-        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_main.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_add_account.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_character_select.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_login.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_password.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_popup.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_publisher_login.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/activity_signup.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/auction_list_item.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/listview_item.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/recyclerview_item.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_auction.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_buying.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_check_item.xml" value="0.42083333333333334" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_delete.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_fix.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Neonox/Desktop/TeamAuction/app/src/main/res/layout/screen_selling.xml" value="0.266304347826087" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.31203703703703706" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/drawable/ic_launcher_background.xml" value="0.31203703703703706" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_add_account.xml" value="0.25905797101449274" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_character_select.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_login.xml" value="0.25905797101449274" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_password.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_popup.xml" value="0.25905797101449274" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_publisher_login.xml" value="0.2046875" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_signup.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/activity_start.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/auction_list_item.xml" value="0.2115036231884058" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/listitem.xml" value="0.2708333333333333" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/listview_item.xml" value="0.2046875" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/login.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/login_screen.xml" value="0.1598731884057971" />
+        <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/recyclerview_item.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_auction.xml" value="0.21965579710144928" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_auction1.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/admin/Desktop/TeamAuction/app/src/main/res/layout/screen_buying.xml" value="0.33" />

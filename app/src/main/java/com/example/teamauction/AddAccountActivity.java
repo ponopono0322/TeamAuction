@@ -50,7 +50,7 @@ public class AddAccountActivity extends AppCompatActivity {
         });
 
         // Adapter 생성
-        adapter = new CustomChoiceListViewAdapter() ;
+        adapter = new AuctionAdapter() ;
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.listview1);

@@ -73,38 +73,39 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_button"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/button_round"
-                android:layout_centerHorizontal="true"
-                android:text="@string/login_text"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:id="@+id/login_button"
+                android:fontFamily="@font/notosanskrmedium"
                 android:includeFontPadding="false"
-                android:fontFamily="@font/notosanskrmedium"/>
+                android:text="@string/login_text"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/go_fpassword_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/login_button"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:layout_below="@+id/login_button"
                 android:fontFamily="@font/notosanskrlight"
                 android:includeFontPadding="false"
                 android:text="@string/go_password_get"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/return_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/go_fpassword_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/go_fpassword_text"
-                android:includeFontPadding="false"
                 android:fontFamily="@font/notosanskrlight"
+                android:includeFontPadding="false"
                 android:text="@string/go_singup_activity"
                 android:textSize="14sp" />
         </RelativeLayout>
