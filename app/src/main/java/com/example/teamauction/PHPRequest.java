@@ -59,18 +59,19 @@ public class PHPRequest extends StringRequest {
     }
 
     // 경매장 리스트
-    public PHPRequest(String URL, String GameName,String ItemName,Integer ItemQuantity,Integer ItmePrice,String GameID, Response.Listener<String> listener ){
+    public PHPRequest(String URL, String GameName,String ItemName,Integer ItemQuantity,Integer ItemPrice,String GameID, String GameNickname,Response.Listener<String> listener ){
         super(Method.POST, URL, listener,null);
         map = new HashMap<>();
         map2 = new HashMap<>();
         map.put("GameName",GameName);
         map.put("ItemName",ItemName);
         map2.put("ItemQuantity",ItemQuantity);
-        map2.put("ItmePrice",ItmePrice);
+        map2.put("ItemPrice",ItemPrice);
         map.put("GameID",GameID);
-
-
+        map.put("GameNickname",GameNickname);
     }
+
+    //public PHPRequest(String URL, String )
     @Override
     protected Map<String, String>getParams() throws AuthFailureError {
         return map;
