@@ -1,31 +1,27 @@
 package com.example.teamauction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BuyingScreen extends AppCompatActivity {
+public class FixScreen extends AppCompatActivity {
     private EditText editTextcost, editTextquantity;
     Button yes_btn, no_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.screen_buying);
+        setContentView(R.layout.screen_fix);
 
         //UI 객체생성
-        yes_btn = findViewById(R.id.buy_check_yes);
-        no_btn = findViewById(R.id.buy_check_no);
+        yes_btn = findViewById(R.id.fix_check_yes);
+        no_btn = findViewById(R.id.fix_check_no);
 
-        editTextcost = findViewById(R.id.buyCostBox);
-        editTextquantity = findViewById(R.id.buyQuantityBox);
+        editTextcost = findViewById(R.id.fixCostBox);
+        editTextquantity = findViewById(R.id.fixQuantityBox);
 
 
         //예 버튼을 눌렀을때 값 저장
@@ -47,7 +43,4 @@ public class BuyingScreen extends AppCompatActivity {
             }
         });
     }
-
-
 }
-

@@ -35,7 +35,7 @@ public class AuctionScreen extends AppCompatActivity {
         adapter = new ListViewAdapter() ;
 
         // 리스트뷰 참조 및 Adapter달기
-        listview = (ListView) findViewById(R.id.list);
+        listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
