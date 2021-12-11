@@ -2,7 +2,6 @@ package com.example.teamauction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -21,18 +20,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class GameChActivity extends AppCompatActivity {
-    private GameAccountInfo got_data;
+
+    private GameAccountInfo accountInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_select);
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+
         ImageButton CanalAdda = findViewById(R.id.cancel_account_add);
         CanalAdda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                Intent intent = new Intent(GameChActivity.this, GameLoginActivity.class);
+                intent.putExtra("account_info", accountInfo);
+                startActivity(intent);
                 finish();
             }
         });
@@ -46,9 +51,6 @@ public class GameChActivity extends AppCompatActivity {
         // 리스트뷰 참조 및 Adapter 달기
         listview = (ListView) findViewById(R.id.listview2);
         listview.setAdapter(adapter);
-
-        Intent game_account_info = getIntent();
-        got_data = (GameAccountInfo) game_account_info.getSerializableExtra("game_account");
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -71,7 +73,8 @@ public class GameChActivity extends AppCompatActivity {
             }
         };
         String purl = "http://ualsgur98.dothome.co.kr/CharacterList.php";
-        PHPRequest validateRequest = new PHPRequest( purl, got_data.getGameName(), got_data.getGamePublisherID(), got_data.getGamePublisherPW(), responseListener);
+        PHPRequest validateRequest = new PHPRequest( purl, accountInfo.getGameName(),
+                accountInfo.getGamePublisherID(), accountInfo.getGamePublisherPW(), responseListener);
         RequestQueue queue = Volley.newRequestQueue(GameChActivity.this);
         queue.add(validateRequest);
 
@@ -82,13 +85,36 @@ public class GameChActivity extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    String CharacterName = item.getText();
-                    Toast.makeText(GameChActivity.this, CharacterName + " 을 선택했습니다" , Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(GameChActivity.this, MainActivity.class);
-                    got_data.setCharacterName(CharacterName);
-                    intent.putExtra("new_account", got_data);
-                    startActivity(intent);
-                    finish();
+                    accountInfo.setCharacterName(item.getText());
+
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
+                                if(success) {
+                                    Toast.makeText(getApplicationContext(), "계정이 정상적으로 연동되었습니다", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(GameChActivity.this, MainActivity.class);
+                                    accountInfo.resetData();
+                                    intent.putExtra("account_info", accountInfo);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(getApplicationContext(), "서버 접속 오류", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) { // 접속 오류가 난 것이라면
+                                e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    };
+                    String purl = "http://ualsgur98.dothome.co.kr/MyGameAndCharacter.php";
+                    PHPRequest validateRequest = new PHPRequest( purl, accountInfo.getLoginID(), accountInfo.getLoginPW(), accountInfo.getGameName(),
+                            accountInfo.getGamePublisherID(), accountInfo.getGamePublisherPW(), accountInfo.getCharacterName(), responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(GameChActivity.this);
+                    queue.add(validateRequest);
                 }
                 else {
                     Toast.makeText(GameChActivity.this, "캐릭터를 선택해주세요", Toast.LENGTH_SHORT).show();

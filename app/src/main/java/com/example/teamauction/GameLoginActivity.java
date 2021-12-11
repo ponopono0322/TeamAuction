@@ -20,17 +20,18 @@ import org.json.JSONObject;
 
 public class GameLoginActivity extends AppCompatActivity {
     private EditText game_id, game_pw;
+    private GameAccountInfo accountInfo;
     TextView gameName;
-    private String gameName_data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publisher_login);
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+
         gameName = findViewById(R.id.game_name);
-        Intent intent = getIntent();
-        gameName_data = intent.getStringExtra("data");
-        gameName.setText(gameName_data);
+        gameName.setText(accountInfo.getGameName());
 
         game_id = findViewById(R.id.login_publisher_emailbox);
         game_pw = findViewById(R.id.login_publisher_pwbox);
@@ -57,15 +58,13 @@ public class GameLoginActivity extends AppCompatActivity {
 
                             if (success) {  // 로그인 성공시
                                 String jsonID = jsonObject.getString("gameID");
-                                //String jsonPW = jsonObject.getString("userPassword");
+                                String jsonPW = jsonObject.getString("gamePW");
+                                accountInfo.setGamePublisherID(jsonID);
+                                accountInfo.setGamePublisherPW(jsonPW);
 
                                 Toast.makeText(getApplicationContext(), jsonID+" 님 환영합니다", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(GameLoginActivity.this, GameChActivity.class);
-                                GameAccountInfo new_account = new GameAccountInfo();
-                                new_account.setGameName(gameName_data);
-                                new_account.setGamePublisherID(gameID);
-                                new_account.setGamePublisherPW(gamePW);
-                                intent.putExtra("game_account", new_account);
+                                intent.putExtra("account_info", accountInfo);
                                 startActivity(intent);
                                 finish();
 
@@ -78,11 +77,11 @@ public class GameLoginActivity extends AppCompatActivity {
                             //e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "존재하지 않는 게임계정입니다", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 };
                 String purl = "http://ualsgur98.dothome.co.kr/gamelogin.php";
-                PHPRequest validateRequest = new PHPRequest( purl, gameName_data, gameID, gamePW, responseListener);
+                PHPRequest validateRequest = new PHPRequest( purl, accountInfo.getGameName(),
+                        gameID, gamePW, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(GameLoginActivity.this);
                 queue.add(validateRequest);
             }
@@ -93,6 +92,7 @@ public class GameLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameLoginActivity.this, GameListActivity.class);
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
                 finish();
             }
