@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/imageView1"
+        android:id="@+id/list_imageview"
         android:gravity="center_vertical"/>
 
     <TextView
@@ -17,7 +17,17 @@
         android:layout_height="50dp"
         android:paddingStart="5dp"
         android:text="TEXT"
-        android:id="@+id/textView1"
+        android:id="@+id/list_textview1"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosanskrlight"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingStart="5dp"
+        android:text="TEXT"
+        android:id="@+id/list_textview2"
         android:textSize="14sp"
         android:gravity="center_vertical"
         android:includeFontPadding="false"
@@ -30,7 +40,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:gravity="center_vertical"
-        android:id="@+id/checkBox1"
+        android:id="@+id/list_checkbox"
         android:focusable="false"
         android:clickable="false"
         android:buttonTint="@color/little_dark_grey"/>

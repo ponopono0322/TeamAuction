@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView = null;
-    SimpleTextAdapter mAdapter = null;
-    ArrayList<RecyclerItem> mList = new ArrayList<RecyclerItem>();
+    RecyclerViewAdapter mAdapter = null;
+    ArrayList<ListViewItem> mList = new ArrayList<ListViewItem>();
     private ActivityResultLauncher<Intent> mStartForResult;
     private int last_pos;
     @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else if(code_get == 1){
                                 Toast.makeText(MainActivity.this, getString(R.string.confirm_logout), Toast.LENGTH_SHORT).show();
-                                Intent back_login_page = new Intent(MainActivity.this, LoginActivity.class);
+                                Intent back_login_page = new Intent(MainActivity.this, MainLoginActivity.class);
                                 startActivity(back_login_page);
                                 finish();
                             }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddAccountActivity.class);
+                Intent intent = new Intent(MainActivity.this, GameListActivity.class);
                 startActivity(intent);
             }
         });
@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new RecyclerViewDecoration(10));
 
         // 리사이클러뷰에 SimpleTextAdapter 객체 지정.
-        SimpleTextAdapter mAdapter = new SimpleTextAdapter(mList);
+        RecyclerViewAdapter mAdapter = new RecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new SimpleTextAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "touched"+position, Toast.LENGTH_SHORT).show();
@@ -104,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
         go_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                last_pos = SimpleTextAdapter.lastCheckedPos;
-                RecyclerItem item = mList.get(last_pos);
-                Toast.makeText(MainActivity.this, item.getTitle()+" data access", Toast.LENGTH_SHORT).show();
+                last_pos = RecyclerViewAdapter.lastCheckedPos;
+                ListViewItem item = mList.get(last_pos);
+                Toast.makeText(MainActivity.this, item.getText()+" data access", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AuctionScreen.class);
                 startActivity(intent);
             }
@@ -125,11 +125,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addItem(String title, String desc, Boolean checkbox) {
-        RecyclerItem item = new RecyclerItem();
+        ListViewItem item = new ListViewItem();
 
         // item.setIcon(icon);
-        item.setTitle(title);
-        item.setDesc(desc);
+        item.setText(title);
+        item.setMassage(desc);
         item.setSelected(checkbox);
 
         mList.add(item);

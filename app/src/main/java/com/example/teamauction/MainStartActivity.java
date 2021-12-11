@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
 // 시작 엑티비티
-public class StartActivity extends AppCompatActivity {
+public class MainStartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class StartActivity extends AppCompatActivity {
         goLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                Intent intent = new Intent(MainStartActivity.this, MainLoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +28,7 @@ public class StartActivity extends AppCompatActivity {
         goSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(MainStartActivity.this, MainSignupActivity.class);
                 startActivity(intent);
             }
         });
