@@ -2,6 +2,7 @@ package com.example.teamauction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -46,18 +47,21 @@ public class GameChActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.listview2);
         listview.setAdapter(adapter);
 
+        Intent game_account_info = getIntent();
+        got_data = (GameAccountInfo) game_account_info.getSerializableExtra("game_account");
+
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
-                    JSONArray games = jsonResponse.getJSONArray(got_data.getGameName());
-                    for (int i = 0; i < games.length(); i++) {
-                        JSONObject item = games.getJSONObject(i);
+                    JSONArray Ids = jsonResponse.getJSONArray("CharacterList");
+                    for (int i = 0; i < Ids.length(); i++) {
+                        JSONObject item = Ids.getJSONObject(i);
                         String characterName = item.getString("gameNickname");
-                        //String gameNum = item.getString("GameNum");
+                        String characterMony = item.getString("gameMoney");
                         adapter.addItem(ContextCompat.getDrawable(GameChActivity.this,
-                                R.drawable.ic_baseline_account_box_24), characterName, "name");
+                                R.drawable.ic_baseline_account_box_24), characterName, characterMony);
                     }
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
@@ -66,29 +70,10 @@ public class GameChActivity extends AppCompatActivity {
                 }
             }
         };
-        Intent game_account_info = getIntent();
-        got_data = (GameAccountInfo) game_account_info.getSerializableExtra("game_account");
         String purl = "http://ualsgur98.dothome.co.kr/CharacterList.php";
         PHPRequest validateRequest = new PHPRequest( purl, got_data.getGameName(), got_data.getGamePublisherID(), got_data.getGamePublisherPW(), responseListener);
         RequestQueue queue = Volley.newRequestQueue(GameChActivity.this);
         queue.add(validateRequest);
-
-
-        /*
-        // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_1","") ;
-        // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_2","") ;
-        // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_3","") ;
-        // 네 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "Character_4","") ;
-        */
-
 
         Button selectCharacter = findViewById(R.id.select_game_character);
         selectCharacter.setOnClickListener(new View.OnClickListener() {
