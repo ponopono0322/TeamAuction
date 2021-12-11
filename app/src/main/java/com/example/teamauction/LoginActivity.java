@@ -50,6 +50,11 @@ public class LoginActivity extends AppCompatActivity {
                 String userID = login_id.getText().toString();
                 String userPW = login_pw.getText().toString();
 
+                if(userID.equals("")) {
+                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -67,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                                 finish();
 
                             } else {        // success가 false일 때
-                                Toast.makeText(getApplicationContext(), "서버와 연결에 실패했습니다", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "서버와 연결이 끊겼습니다", Toast.LENGTH_SHORT).show();
                                 return;
                             }
 

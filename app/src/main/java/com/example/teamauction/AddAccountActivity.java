@@ -81,17 +81,6 @@ public class AddAccountActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(AddAccountActivity.this);
         queue.add(validateRequest);
 
-        /*
-        // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "MapleStory");
-        // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "DF");
-        // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_baseline_account_box_24),
-                "LostArk");
-        */
         Button publisher_login = findViewById(R.id.login_button_publisher);
         publisher_login.setOnClickListener(new View.OnClickListener() {
             @Override

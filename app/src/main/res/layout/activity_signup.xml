@@ -128,9 +128,10 @@
                 android:layout_gravity="center">
 
                 <EditText
-                    android:layout_width="260dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
                     android:hint="@string/hint_id"
                     android:id="@+id/signup_id"
                     android:inputType="textEmailAddress"
@@ -142,15 +143,15 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/check_id"
-                    android:layout_width="40dp"
+                    android:layout_width="60dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/button_round"
+                    android:background="@drawable/button_round_white"
                     android:text="@string/check_con"
                     android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:lineSpacingExtra="-3dp"
+                    android:textColor="@color/default_color"
+                    android:lineSpacingExtra="-5dp"
                     android:includeFontPadding="false"
-                    android:fontFamily="@font/notosanskrlight"/>
+                    android:fontFamily="@font/notosanskrmedium"/>
             </LinearLayout>
 
             <TextView
@@ -230,7 +231,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/default_color"
                 android:layout_below="@id/signup_button"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:id="@+id/go_login_txt"
                 android:includeFontPadding="false"
                 android:fontFamily="@font/notosanskrlight"/>

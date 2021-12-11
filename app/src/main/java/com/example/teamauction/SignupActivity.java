@@ -72,13 +72,14 @@ public class SignupActivity extends AppCompatActivity {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
-                                join_email.setEnabled(false); //아이디값 고정
-                                validate = true; //검증 완료
-                                checkIdButton.setBackgroundColor(Color.WHITE);
+                                join_id.setEnabled(false);      //아이디값 고정
+                                checkIdButton.setVisibility(View.GONE);//버튼 비활성화
+                                validate = true;                //검증 완료
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
                                 dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                                 dialog.show();
+                                join_id.setText(null);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

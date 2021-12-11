@@ -24,7 +24,7 @@ public class AuctionScreen extends AppCompatActivity {
 
     String[] names = {"아이템 이름들"}; // 아이템 이름들
     Integer[] images = {R.drawable.ic_launcher_background}; // 아이템 이미지
-//경매장 리스트 만드는중
+    //경매장 리스트 만드는중
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class CharacterSelectActivity extends AppCompatActivity {
     private GameAccountInfo got_data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

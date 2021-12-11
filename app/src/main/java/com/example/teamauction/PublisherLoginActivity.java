@@ -42,6 +42,11 @@ public class PublisherLoginActivity extends AppCompatActivity {
                 String gameID = game_id.getText().toString();
                 String gamePW = game_pw.getText().toString();
 
+                if(gameID.equals("")) {
+                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
