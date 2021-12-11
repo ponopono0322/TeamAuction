@@ -3,22 +3,11 @@ package com.example.teamauction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
@@ -31,24 +20,23 @@ public class AuctionScreen extends AppCompatActivity {
         setContentView(R.layout.screen_auction);
 
         ListView listview ;
-        AuctionAdapter adapter;
+        ListViewAdapter adapter;
 
         // Adapter 생성
-        adapter = new AuctionAdapter() ;
-
+        adapter = new ListViewAdapter() ;
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.list);
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                "Box", "Account Box Black 36dp") ;
         // 두 번째 아이템 추가.
-        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Circle", "Account Circle Black 36dp") ;
         // 세 번째 아이템 추가.
-        adapter.addGameItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Ind", "Assignment Ind Black 36dp") ;
 
         //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
@@ -63,7 +51,7 @@ public class AuctionScreen extends AppCompatActivity {
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
                     //intent.putExtra("data", ItemCode);
                     startActivity(intent);
-                    finish();
+                    //finish();
                 }
             }
         });

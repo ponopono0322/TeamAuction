@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainStartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -85,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                 };
 
                 String purl = "http://ualsgur98.dothome.co.kr/Login.php";
-                RequestPHP validateRequest = new RequestPHP( purl, userID, userPW, responseListener);
+                PHPRequest validateRequest = new PHPRequest( purl, userID, userPW, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(validateRequest);
             }
@@ -95,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         return_signup_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainSignupActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -105,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         return_find_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, PasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainPasswordActivity.class);
                 startActivity(intent);
                 finish();
             }

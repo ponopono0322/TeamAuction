@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.teamauction.CheckableLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@drawable/layer_round">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/list_imageview"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingStart="5dp"
+        android:text="TEXT"
+        android:id="@+id/list_textview1"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosanskrlight"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingStart="5dp"
+        android:text="TEXT"
+        android:id="@+id/list_textview2"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/notosanskrlight"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <CheckBox
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:id="@+id/list_checkbox"
+        android:focusable="false"
+        android:clickable="false"
+        android:buttonTint="@color/little_dark_grey"/>
+
+</com.example.teamauction.CheckableLinearLayout>

@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,20 +16,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView = null;
-    SimpleTextAdapter mAdapter = null;
-    ArrayList<RecyclerItem> mList = new ArrayList<RecyclerItem>();
+    RecyclerViewAdapter mAdapter = null;
+    ArrayList<ListViewItem> mList = new ArrayList<ListViewItem>();
     private ActivityResultLauncher<Intent> mStartForResult;
     private int last_pos;
     @Override
@@ -86,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddAccountActivity.class);
+                Intent intent = new Intent(MainActivity.this, GameListActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new RecyclerViewDecoration(10));
 
         // 리사이클러뷰에 SimpleTextAdapter 객체 지정.
-        SimpleTextAdapter mAdapter = new SimpleTextAdapter(mList);
+        RecyclerViewAdapter mAdapter = new RecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new SimpleTextAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "touched"+position, Toast.LENGTH_SHORT).show();
@@ -114,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
         go_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                last_pos = SimpleTextAdapter.lastCheckedPos;
-                RecyclerItem item = mList.get(last_pos);
-                Toast.makeText(MainActivity.this, item.getTitle()+" data access", Toast.LENGTH_SHORT).show();
+                last_pos = RecyclerViewAdapter.lastCheckedPos;
+                ListViewItem item = mList.get(last_pos);
+                Toast.makeText(MainActivity.this, item.getText()+" data access", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AuctionScreen.class);
                 startActivity(intent);
             }
@@ -135,11 +125,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addItem(String title, String desc, Boolean checkbox) {
-        RecyclerItem item = new RecyclerItem();
+        ListViewItem item = new ListViewItem();
 
         // item.setIcon(icon);
-        item.setTitle(title);
-        item.setDesc(desc);
+        item.setText(title);
+        item.setMassage(desc);
         item.setSelected(checkbox);
 
         mList.add(item);

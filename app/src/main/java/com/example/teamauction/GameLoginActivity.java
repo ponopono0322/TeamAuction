@@ -18,7 +18,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PublisherLoginActivity extends AppCompatActivity {
+public class GameLoginActivity extends AppCompatActivity {
     private EditText game_id, game_pw;
     TextView gameName;
     private String gameName_data;
@@ -60,7 +60,7 @@ public class PublisherLoginActivity extends AppCompatActivity {
                                 //String jsonPW = jsonObject.getString("userPassword");
 
                                 Toast.makeText(getApplicationContext(), jsonID+" 님 환영합니다", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(PublisherLoginActivity.this, CharacterSelectActivity.class);
+                                Intent intent = new Intent(GameLoginActivity.this, GameChActivity.class);
                                 GameAccountInfo new_account = new GameAccountInfo();
                                 new_account.setGameName(gameName_data);
                                 new_account.setGamePublisherID(gameID);
@@ -82,8 +82,8 @@ public class PublisherLoginActivity extends AppCompatActivity {
                     }
                 };
                 String purl = "http://ualsgur98.dothome.co.kr/gamelogin.php";
-                RequestPHP validateRequest = new RequestPHP( purl, gameName_data, gameID, gamePW, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(PublisherLoginActivity.this);
+                PHPRequest validateRequest = new PHPRequest( purl, gameName_data, gameID, gamePW, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(GameLoginActivity.this);
                 queue.add(validateRequest);
             }
         });
@@ -92,7 +92,7 @@ public class PublisherLoginActivity extends AppCompatActivity {
         back_add_publisher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PublisherLoginActivity.this, AddAccountActivity.class);
+                Intent intent = new Intent(GameLoginActivity.this, GameListActivity.class);
                 startActivity(intent);
                 finish();
             }

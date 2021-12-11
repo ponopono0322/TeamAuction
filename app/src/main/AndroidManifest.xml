@@ -13,22 +13,22 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.TeamAuction">
         <activity
-            android:name=".CharacterSelectActivity"
+            android:name=".GameChActivity"
             android:exported="false" />
         <activity
-            android:name=".PublisherLoginActivity"
+            android:name=".GameLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".AddAccountActivity"
+            android:name=".GameListActivity"
             android:exported="false" />
         <activity
             android:name=".PopupActivity"
             android:theme="@android:style/Theme.Dialog" />
         <activity
-            android:name=".PasswordActivity"
+            android:name=".MainPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".MainSignupActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -37,7 +37,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".MainStartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

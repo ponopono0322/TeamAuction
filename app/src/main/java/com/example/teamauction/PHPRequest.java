@@ -7,12 +7,12 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequestPHP extends StringRequest {
+public class PHPRequest extends StringRequest {
 
     private Map<String, String> map;
 
     // 회원가입
-    public RequestPHP(String URL, String userName, String userPhone, String userEmail, String userID, String userPassword, Response.Listener<String> listener) {
+    public PHPRequest(String URL, String userName, String userPhone, String userEmail, String userID, String userPassword, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -24,7 +24,7 @@ public class RequestPHP extends StringRequest {
     }
 
     // 게임 넘겨주기
-    public RequestPHP(String URL, String gameName, String gameID, String gamePW, Response.Listener<String> listener) {
+    public PHPRequest(String URL, String gameName, String gameID, String gamePW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -34,7 +34,7 @@ public class RequestPHP extends StringRequest {
     }
 
     // 로그인
-    public RequestPHP(String URL, String userID, String userPW, Response.Listener<String> listener) {
+    public PHPRequest(String URL, String userID, String userPW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -43,7 +43,7 @@ public class RequestPHP extends StringRequest {
     }
 
     // 아이디 검사
-    public RequestPHP(String URL, String userID, Response.Listener<String> listener) {
+    public PHPRequest(String URL, String userID, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -51,7 +51,7 @@ public class RequestPHP extends StringRequest {
     }
 
     // 게임 목록
-    public RequestPHP(String URL, Response.Listener<String> listener) {
+    public PHPRequest(String URL, Response.Listener<String> listener) {
         super(Method.POST, URL, listener,null);
 
         map = new HashMap<>();

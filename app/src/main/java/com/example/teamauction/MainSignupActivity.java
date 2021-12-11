@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 // 회원가입 액티비티
-public class SignupActivity extends AppCompatActivity {
+public class MainSignupActivity extends AppCompatActivity {
 
     private EditText join_email, join_password, join_pwck, join_name, join_phone, join_id;
     private boolean validate = false;
@@ -43,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this, StartActivity.class);
+                Intent intent = new Intent(MainSignupActivity.this, MainStartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -56,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
                 String userID = join_id.getText().toString();
                 if (validate) { return; }
                 if (userID.equals("")) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainSignupActivity.this);
                     dialog = builder.setMessage("아이디를 입력하세요.").setPositiveButton("확인", null).create();
                     dialog.show();
                     return;
@@ -69,14 +68,14 @@ public class SignupActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if (success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainSignupActivity.this);
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
                                 join_id.setEnabled(false);      //아이디값 고정
                                 checkIdButton.setVisibility(View.GONE);//버튼 비활성화
                                 validate = true;                //검증 완료
                             } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainSignupActivity.this);
                                 dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                                 dialog.show();
                                 join_id.setText(null);
@@ -87,8 +86,8 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 };
                 String purl = "http://ualsgur98.dothome.co.kr/UserValidate.php";
-                RequestPHP validateRequest = new RequestPHP( purl, userID, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(SignupActivity.this);
+                PHPRequest validateRequest = new PHPRequest( purl, userID, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(MainSignupActivity.this);
                 queue.add(validateRequest);
             }
         });
@@ -114,7 +113,7 @@ public class SignupActivity extends AppCompatActivity {
                             if (success) {
                                 if(userPass.equals(userPwck)){
                                     Toast.makeText(getApplicationContext(), "계정이 정상적으로 등록되었습니다", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(SignupActivity.this, StartActivity.class);
+                                    Intent intent = new Intent(MainSignupActivity.this, MainStartActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -137,8 +136,8 @@ public class SignupActivity extends AppCompatActivity {
 
                 // 서버 전송
                 String purl = "http://ualsgur98.dothome.co.kr/Register.php";
-                RequestPHP registerRequest = new RequestPHP(purl, userName, userPhone, userEmail, userID, userPass, responseListener);
-                RequestQueue queue = Volley.newRequestQueue( SignupActivity.this );
+                PHPRequest registerRequest = new PHPRequest(purl, userName, userPhone, userEmail, userID, userPass, responseListener);
+                RequestQueue queue = Volley.newRequestQueue( MainSignupActivity.this );
                 queue.add( registerRequest );
             }
         });
@@ -147,7 +146,7 @@ public class SignupActivity extends AppCompatActivity {
         goLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainSignupActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
