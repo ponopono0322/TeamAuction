@@ -19,7 +19,7 @@ public class MainStartActivity extends AppCompatActivity {
         goLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainStartActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainStartActivity.this, MainLoginActivity.class);
                 startActivity(intent);
             }
         });

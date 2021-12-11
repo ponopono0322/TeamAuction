@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else if(code_get == 1){
                                 Toast.makeText(MainActivity.this, getString(R.string.confirm_logout), Toast.LENGTH_SHORT).show();
-                                Intent back_login_page = new Intent(MainActivity.this, LoginActivity.class);
+                                Intent back_login_page = new Intent(MainActivity.this, MainLoginActivity.class);
                                 startActivity(back_login_page);
                                 finish();
                             }

@@ -19,7 +19,7 @@ public class MainPasswordActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainPasswordActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainPasswordActivity.this, MainLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -29,7 +29,7 @@ public class MainPasswordActivity extends AppCompatActivity {
         send_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainPasswordActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainPasswordActivity.this, MainLoginActivity.class);
                 startActivity(intent);
                 finish();
             }

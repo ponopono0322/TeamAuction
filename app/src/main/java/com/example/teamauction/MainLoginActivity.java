@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 // 로그인화면 엑티비티
-public class LoginActivity extends AppCompatActivity {
+public class MainLoginActivity extends AppCompatActivity {
 
     private EditText login_id, login_pw;
 
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainStartActivity.class);
+                Intent intent = new Intent(MainLoginActivity.this, MainStartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                                 //String jsonPW = jsonObject.getString("userPassword");
 
                                 Toast.makeText(getApplicationContext(), jsonID+" 님 환영합니다", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(MainLoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
 
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 String purl = "http://ualsgur98.dothome.co.kr/Login.php";
                 PHPRequest validateRequest = new PHPRequest( purl, userID, userPW, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                RequestQueue queue = Volley.newRequestQueue(MainLoginActivity.this);
                 queue.add(validateRequest);
             }
         });
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         return_signup_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainSignupActivity.class);
+                Intent intent = new Intent(MainLoginActivity.this, MainSignupActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         return_find_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainPasswordActivity.class);
+                Intent intent = new Intent(MainLoginActivity.this, MainPasswordActivity.class);
                 startActivity(intent);
                 finish();
             }
