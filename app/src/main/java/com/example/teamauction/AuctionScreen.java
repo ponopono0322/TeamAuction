@@ -75,15 +75,6 @@ public class AuctionScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
         queue.add(validateRequest);
 
-        // 첫 번째 아이템 추가.
-     //   adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-            //   "Box", "Account Box Black 36dp") ;
-        // 두 번째 아이템 추가.
-       // adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-          //      "Circle", "Account Circle Black 36dp") ;
-        // 세 번째 아이템 추가.
-        //adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-           //     "Ind", "Assignment Ind Black 36dp") ;
 
         //EditText에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;

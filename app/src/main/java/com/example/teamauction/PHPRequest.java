@@ -58,7 +58,7 @@ public class PHPRequest extends StringRequest {
         map = new HashMap<>();
     }
 
-    // 경매장 리스트
+    // 경매장 리스트, 판매중인, 내아이템
     public PHPRequest(String URL, String GameName,String ItemName,Integer ItemQuantity,Integer ItemPrice,String GameID, String GameNickname,Response.Listener<String> listener ){
         super(Method.POST, URL, listener,null);
         map = new HashMap<>();
