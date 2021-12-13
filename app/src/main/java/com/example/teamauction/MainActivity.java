@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject item = Ids.getJSONObject(i);
                         String gameName = item.getString("gameName");
                         String gameNickName = item.getString("gameNickname");
-                        addItem(gameName, gameNickName,CheckFirst);
+                        addItem(gameName, gameNickName, CheckFirst);
                         CheckFirst = false;
                     }
                     mAdapter.notifyDataSetChanged();
@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
         PHPRequest validateRequest = new PHPRequest( purl, accountInfo.getLoginID(), accountInfo.getLoginPW(), responseListener);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         queue.add(validateRequest);
-
     }
 
     public void addItem(String title, String desc, Boolean checkbox) {
