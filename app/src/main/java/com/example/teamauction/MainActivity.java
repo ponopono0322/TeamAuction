@@ -157,16 +157,6 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         queue.add(validateRequest);
 
-        /*
-        // 아이템 추가.
-        addItem("Game_1", "Character_1", Boolean.TRUE);
-        // 두 번째 아이템 추가.
-        addItem("Game_2", "Character_2", Boolean.FALSE);
-        // 세 번째 아이템 추가.
-        addItem("Game_3", "Character_1", Boolean.FALSE);
-        // 네 번째 아이템 추가.
-        // addItem(getDrawable(R.drawable.ic_baseline_account_box_24), "Ret", "Account Rect Balck 36dp");
-        */
     }
 
     public void addItem(String title, String desc, Boolean checkbox) {
