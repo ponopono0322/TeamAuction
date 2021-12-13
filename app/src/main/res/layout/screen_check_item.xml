@@ -45,10 +45,11 @@
         tools:ignore="MissingConstraints">
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/my_item_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/listview_item" />
+            tools:listitem="@layout/listview_item"
+            android:choiceMode="singleChoice"/>
 
     </LinearLayout>
 
@@ -75,7 +76,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/sellButton"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:backgroundTint="#8BC34A"
