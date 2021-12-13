@@ -8,6 +8,6 @@
 ### 1. 설계 기획 및 계획서
 ### 2. 구현
 #### 로그인 화면
-![로그인 화면](./design/guide/Screenshot_1639403564.png)
+![로그인 화면](./design/guide/Screenshot_1639403564.png){: width="100" height="300"}
 ### 3. 테스트
 ### 4. WIKI
