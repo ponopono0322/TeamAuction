@@ -53,9 +53,14 @@
             android:exported="false"/>
         <activity android:name=".BuyingScreen"
             android:exported="false"/>
+        <activity android:name=".SellingScreen"
+            android:exported="false"/>
+        <activity android:name=".DeleteScreen"
+            android:exported="false"/>
+        <activity android:name=".FixScreen"
+            android:exported="false"/>
+
 
     </application>
-
-
 
 </manifest>

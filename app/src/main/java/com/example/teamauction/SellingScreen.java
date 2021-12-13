@@ -1,43 +1,38 @@
 package com.example.teamauction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BuyingScreen extends AppCompatActivity {
-    private TextView buyCostBox;
-    private EditText editTextquantity;
+public class SellingScreen extends AppCompatActivity {
+    private EditText editTextcost, editTextquantity;
     Button yes_btn, no_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.screen_buying);
+        setContentView(R.layout.screen_selling);
 
         //UI 객체생성
-        yes_btn = findViewById(R.id.buy_check_yes);
-        no_btn = findViewById(R.id.buy_check_no);
+        yes_btn = findViewById(R.id.sell_check_yes);
+        no_btn = findViewById(R.id.sell_check_no);
 
-        buyCostBox = findViewById(R.id.buyCostBox);
-        editTextquantity = findViewById(R.id.buyQuantityBox);
-        buyCostBox.setText(""); //클릭한 리스트뷰의 아이템으로 이름 변경
+        editTextcost = findViewById(R.id.sellCostBox);
+        editTextquantity = findViewById(R.id.sellQuantityBox);
+
 
         //예 버튼을 눌렀을때 값 저장
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String get_textcost = editTextcost.getText().toString();
+                String get_textcost = editTextcost.getText().toString();
                 String get_textquan = editTextquantity.getText().toString();
 
-                Toast.makeText(getApplicationContext(), get_textquan, Toast.LENGTH_SHORT).show();
-                finish();
+                Toast.makeText(getApplicationContext(), get_textcost, Toast.LENGTH_SHORT).show();
+
             }
         });
 

@@ -22,6 +22,7 @@ import org.json.JSONObject;
 public class MainLoginActivity extends AppCompatActivity {
 
     private EditText login_id, login_pw;
+    private GameAccountInfo account_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainLoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        account_data = new GameAccountInfo();
         Button button = findViewById(R.id.login_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,10 +64,13 @@ public class MainLoginActivity extends AppCompatActivity {
 
                             if (success) {  // 로그인 성공시
                                 String jsonID = jsonObject.getString("userID");
-                                //String jsonPW = jsonObject.getString("userPassword");
+                                String jsonPW = jsonObject.getString("userPassword");
 
                                 Toast.makeText(getApplicationContext(), jsonID+" 님 환영합니다", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(MainLoginActivity.this, MainActivity.class);
+                                account_data.setLoginID(jsonID);
+                                account_data.setLoginPW(jsonPW);
+                                intent.putExtra("account_info", account_data);
                                 startActivity(intent);
                                 finish();
 

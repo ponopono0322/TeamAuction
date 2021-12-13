@@ -46,10 +46,11 @@
         tools:ignore="MissingConstraints">
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/selling_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/listview_item" />
+            tools:listitem="@layout/listview_item"
+            android:choiceMode="singleChoice"/>
 
     </LinearLayout>
 
@@ -84,7 +85,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/dropButton"
             android:layout_width="195dp"
             android:layout_height="56dp"
             android:backgroundTint="#E91E63"
@@ -92,7 +93,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/fixButton"
             android:layout_width="206dp"
             android:layout_height="55dp"
             android:backgroundTint="#8BC34A"
