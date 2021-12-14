@@ -29,6 +29,6 @@
 ### 3. 테스트
 |클래스 이름|실행결과|
 |:---:|:---:|
-|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|[test]("./design/test/GameAccountInfoTest.html")|
+|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|<a src="./design/test/GameAccountInfoTest.html">|
 
 ### 4. WIKI
