@@ -2,8 +2,8 @@
 ## 목차
 1. 설계 기획 및 계획서
 2. [구현](#2.-구현)
-3. 테스트
-4. WIKI
+3. [테스트](#3.-테스트)
+4. [WIKI](#4.-WIKI)
 
 ### 1. 설계 기획 및 계획서
 ### 2. 구현
@@ -29,4 +29,4 @@
 |:---:|:---:|
 |[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|[.pdf](./design/test/GameAccountInfoTest.pdf)|
 
-### 4. WIKI
+### [4. WIKI](https://github.com/ponopono0322/TeamAuction/wiki)
