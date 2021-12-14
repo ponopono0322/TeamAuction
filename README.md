@@ -26,6 +26,9 @@
 |:---:|:---:|:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
 
-
 ### 3. 테스트
+|클래스 이름|실행결과|
+|:---:|:---:|
+|[GameAccountInfoTest](./Users/shin/AndroidStudioProjects/TeamAuction/app/src/androidTest/java/com/example/teamauction/ExampleInstrumentedTest.java)|[test](./design/test/test-results---gameaccountinfotest.html)|
+
 ### 4. WIKI
