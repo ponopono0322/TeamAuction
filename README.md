@@ -7,7 +7,23 @@
 
 ### 1. 설계 기획 및 계획서
 ### 2. 구현
-#### 로그인 화면
-![로그인 화면](./design/guide/Screenshot_1639403564.png){: width="100" height="300"}
+#### 초기화면
+<img src="./design/guide/Screenshot_1639403564.png" width="200px">
+
+#### 로그인과 회원가입 화면
+<img src="./design/guide/Screenshot_1639452081.png" width="200px">
+<img src="./design/guide/Screenshot_1639452088.png" width="200px">
+
+#### 메인화면
+<img src="./design/guide/Screenshot_1639452413.png" width="200px">
+
+#### 계정 연동(+ 버튼) 과정
+<img src="./design/guide/Screenshot_1639452416.png" width="200px">
+<img src="./design/guide/Screenshot_1639452420.png" width="200px">
+<img src="./design/guide/Screenshot_1639452428.png" width="200px">
+<img src="./design/guide/Screenshot_1639452430.png" width="200px">
+
+
+
 ### 3. 테스트
 ### 4. WIKI
