@@ -7,8 +7,10 @@
 
 ### 1. 설계 기획 및 계획서
 ### 2. 구현
-#### 초기화면
-<img src="./design/guide/Screenshot_1639403564.png" width="200px">
+#### 초기화면 및 메인화면
+|초기화면|메인화면|
+|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639403564.png" width="200px">|<img src="./design/guide/Screenshot_1639452413.png" width="200px">|
 
 #### 로그인과 회원가입 화면
 
@@ -16,10 +18,6 @@
 |:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452081.png" width="200px">|<img src="./design/guide/Screenshot_1639452088.png" width="200px">|
 
-
-
-#### 메인화면
-<img src="./design/guide/Screenshot_1639452413.png" width="200px">
 
 #### 계정 연동(+ 버튼) 과정
 |게임 선택화면|계정 로그인화면|캐릭터 선택화면|연동 후 메인화면|
