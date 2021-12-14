@@ -29,6 +29,6 @@
 ### 3. 테스트
 |클래스 이름|실행결과|
 |:---:|:---:|
-|[GameAccountInfoTest](./Users/shin/AndroidStudioProjects/TeamAuction/app/src/androidTest/java/com/example/teamauction/ExampleInstrumentedTest.java)|[test](./design/test/test-results---gameaccountinfotest.html)|
+|[GameAccountInfoTest](#./Users/shin/AndroidStudioProjects/TeamAuction/app/src/androidTest/java/com/example/teamauction/ExampleInstrumentedTest.java)|[test](#./design/test/test-results---gameaccountinfotest.html)|
 
 ### 4. WIKI
