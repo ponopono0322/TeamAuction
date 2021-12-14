@@ -29,7 +29,7 @@
 ### 3. 테스트
 |클래스 이름|실행결과|
 |:---:|:---:|
-|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|<A herf="./design/test/GameAccountInfoTest.html"> link</A>|
+|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|<a herf="./design/test/GameAccountInfoTest.html">link</a>|
 
 ### 4. WIKI
 
