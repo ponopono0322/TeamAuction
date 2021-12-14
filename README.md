@@ -11,8 +11,12 @@
 <img src="./design/guide/Screenshot_1639403564.png" width="200px">
 
 #### 로그인과 회원가입 화면
-<img src="./design/guide/Screenshot_1639452081.png" width="200px">
-<img src="./design/guide/Screenshot_1639452088.png" width="200px">
+
+|로그인|회원가입|
+|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639452081.png" width="200px">|<img src="./design/guide/Screenshot_1639452088.png" width="200px">|
+
+
 
 #### 메인화면
 <img src="./design/guide/Screenshot_1639452413.png" width="200px">
