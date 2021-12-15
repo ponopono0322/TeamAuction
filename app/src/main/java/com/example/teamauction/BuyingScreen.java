@@ -15,11 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 public class BuyingScreen extends AppCompatActivity {
     private TextView buyCostBox;
     private EditText editTextquantity;
+    private EditText editTextcost;
     Button yes_btn, no_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_buying);
+
+
+        Intent intent = getIntent();
+        String ItemName = intent.getExtras().getString("data");
 
         //UI 객체생성
         yes_btn = findViewById(R.id.buy_check_yes);
@@ -33,10 +38,10 @@ public class BuyingScreen extends AppCompatActivity {
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String get_textcost = editTextcost.getText().toString();
+                String get_textcost = editTextcost.getText().toString();
                 String get_textquan = editTextquantity.getText().toString();
 
-                Toast.makeText(getApplicationContext(), get_textquan, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), ItemName+get_textquan+"개를 "+get_textcost+"에 구매하셨습니다.", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -44,6 +49,7 @@ public class BuyingScreen extends AppCompatActivity {
         no_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "구매를 취소하셨습니다.", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

@@ -12,9 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+
 public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
+    private GameAccountInfo accountInfo;
 
     ListView listview = null;
     //경매장 리스트 만드는중
@@ -25,7 +27,9 @@ public class AuctionScreen extends AppCompatActivity {
 
         ListViewAdapter adapter;
 
-
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myGameName =accountInfo.getGameName();
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -34,16 +38,21 @@ public class AuctionScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
-        // 첫 번째 아이템 추가.
+        // 리스트 뷰 아이템 추가.
+        for (int i=0; i<10;i++ ) {
+            adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                    "Box", "Account Box Black 36dp");
+        }
+        /*
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-               "Box", "Account Box Black 36dp") ;
+                "Box", "Account Box Black 36dp");
         // 두 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Circle", "Account Circle Black 36dp") ;
+                "Circle", "Account Circle Black 36dp");
         // 세 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Ind", "Assignment Ind Black 36dp") ;
-
+                "Ind", "Assignment Ind Black 36dp");
+         */
         //EditText에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
         editTextFilter.addTextChangedListener(new TextWatcher() {
@@ -75,10 +84,10 @@ public class AuctionScreen extends AppCompatActivity {
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    //String ItemCode = item.getText();
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String ItemName = item.getText();
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
-                    //intent.putExtra("data", ItemCode);
+                    intent.putExtra("data", ItemName);
                     startActivity(intent);
                     //finish();
                 }

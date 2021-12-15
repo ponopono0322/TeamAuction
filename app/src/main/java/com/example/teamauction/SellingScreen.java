@@ -30,7 +30,6 @@ public class SellingScreen extends AppCompatActivity {
             public void onClick(View view) {
                 String get_textcost = editTextcost.getText().toString();
                 String get_textquan = editTextquantity.getText().toString();
-
                 Toast.makeText(getApplicationContext(), get_textcost, Toast.LENGTH_SHORT).show();
 
             }
