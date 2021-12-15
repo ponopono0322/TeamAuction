@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class SellingItemScreen extends AppCompatActivity {
+    private GameAccountInfo accountInfo;
+    private TextView UserCharName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,13 @@ public class SellingItemScreen extends AppCompatActivity {
 
         ListView listview ;
         ListViewAdapter adapter;
+
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myCharName =accountInfo.getCharacterName();
+
+        UserCharName = findViewById(R.id.MyUserCharName);
+        UserCharName.setText(myCharName);
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -36,7 +46,7 @@ public class SellingItemScreen extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Ind", "Assignment Ind Black 36dp") ;
 
-        //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
+        //리스트 뷰에 있는 아이템 터치시 DeleteScreen popup창 띄우기
         Button dropingbutton = findViewById(R.id.dropButton);
         dropingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +63,7 @@ public class SellingItemScreen extends AppCompatActivity {
             }
         });
 
-        //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
+        //리스트 뷰에 있는 아이템 터치시 FixScreen popup창 띄우기
         Button fixingbutton = findViewById(R.id.fixButton);
         fixingbutton.setOnClickListener(new View.OnClickListener() {
             @Override

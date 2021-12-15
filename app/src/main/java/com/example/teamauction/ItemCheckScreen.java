@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ItemCheckScreen extends AppCompatActivity {
+    private GameAccountInfo accountInfo;
+    private TextView UserCharName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,13 @@ public class ItemCheckScreen extends AppCompatActivity {
 
         ListView listview ;
         ListViewAdapter adapter;
+
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myCharName =accountInfo.getCharacterName();
+
+        UserCharName = findViewById(R.id.MyCharName);
+        UserCharName.setText(myCharName);
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
