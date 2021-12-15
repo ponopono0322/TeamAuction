@@ -45,6 +45,10 @@ public class BuyingScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String get_textquan = editTextquantity.getText().toString();
+                Intent intent = new Intent(getApplicationContext(), AuctionScreen.class);
+                intent.putExtra("account_info", accountInfo);
+                startActivity(intent);
+                finish();
                 /*if(Integer.parseInt(get_textquan)<=Integer.parseInt(Quantity))//사려는 아이템 전체 수량 > 내가 사려는 수량
                 {
                     if()//아이템 가격<내 돈
@@ -63,11 +67,14 @@ public class BuyingScreen extends AppCompatActivity {
                 }*/
             }
         });
-
+        //아니오 버튼을 눌렀을때 구매 취소, 경매장 화면으로 다시 돌아감
         no_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "구매를 취소하셨습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), AuctionScreen.class);
+                intent.putExtra("account_info", accountInfo);
+                startActivity(intent);
                 finish();
             }
         });

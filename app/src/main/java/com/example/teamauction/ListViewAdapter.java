@@ -134,7 +134,7 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
             }
         }
     }
-
+    //DB에서 가져온 값 아이템 데이터 추가를 위한 함수
     public void addAuctionItem(Drawable icon, String text, String msg, String uninum, String regnum) {
         ListViewItem item = new ListViewItem();
 

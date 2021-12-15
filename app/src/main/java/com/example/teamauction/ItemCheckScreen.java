@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,9 @@ import org.json.JSONObject;
 public class ItemCheckScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView UserCharName;
+    private ImageButton backButton;
+    private TextView money;
+
     ListView listview = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,10 @@ public class ItemCheckScreen extends AppCompatActivity {
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.my_item_list);
         listview.setAdapter(adapter);
+
+        //DB에서 받아온 내 돈으로 변경
+        money = findViewById(R.id.moneyBox);
+        money.setText("500원");
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -78,7 +86,16 @@ public class ItemCheckScreen extends AppCompatActivity {
         queue.add(validateRequest);
 
 
-
+        ImageButton backButton = findViewById(R.id.back_auctionScreen); // 뒤로가기 버튼 경매장 화면으로 이동
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ItemCheckScreen.this, AuctionScreen.class);
+                intent.putExtra("account_info", accountInfo);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 

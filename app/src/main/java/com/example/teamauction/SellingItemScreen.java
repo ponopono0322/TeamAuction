@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import org.json.JSONObject;
 public class SellingItemScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView UserCharName;
+    private ImageButton backButton;
     ListView listview = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,17 @@ public class SellingItemScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(SellingItemScreen.this);
         queue.add(validateRequest);
 
+
+        ImageButton backButton = findViewById(R.id.back_auctionScreen2); // 뒤로가기 버튼 경매장 화면으로 이동
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SellingItemScreen.this, AuctionScreen.class);
+                intent.putExtra("account_info", accountInfo);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         //리스트 뷰에 있는 아이템 터치시 DeleteScreen popup창 띄우기
         Button dropingbutton = findViewById(R.id.dropButton);
