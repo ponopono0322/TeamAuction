@@ -2,7 +2,6 @@ package com.example.teamauction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -76,31 +75,6 @@ public class GameChActivity extends AppCompatActivity {
         String purl = "http://ualsgur98.dothome.co.kr/CharacterList.php";
         PHPRequest validateRequest = new PHPRequest( purl, accountInfo.getGameName(),
                 accountInfo.getGamePublisherID(), accountInfo.getGamePublisherPW(), responseListener);
-        RequestQueue queue = Volley.newRequestQueue(GameChActivity.this);
-        queue.add(validateRequest);
-
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    JSONArray Ids = jsonResponse.getJSONArray("CharacterList");
-                    for (int i = 0; i < Ids.length(); i++) {
-                        JSONObject item = Ids.getJSONObject(i);
-                        String characterName = item.getString("gameNickname");
-                        String characterMony = item.getString("gameMoney");
-                        adapter.addItem(ContextCompat.getDrawable(GameChActivity.this,
-                                R.drawable.ic_baseline_account_box_24), characterName, characterMony);
-                    }
-                    adapter.notifyDataSetChanged();
-                } catch (JSONException e) { // 접속 오류가 난 것이라면
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-        String purl = "http://ualsgur98.dothome.co.kr/CharacterList.php";
-        PHPRequest validateRequest = new PHPRequest( purl, got_data.getGameName(), got_data.getGamePublisherID(), got_data.getGamePublisherPW(), responseListener);
         RequestQueue queue = Volley.newRequestQueue(GameChActivity.this);
         queue.add(validateRequest);
 

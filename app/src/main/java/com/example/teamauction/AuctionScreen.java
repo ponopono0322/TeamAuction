@@ -47,11 +47,44 @@ public class AuctionScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("GameAuction");
+
+
+                    for (int i = 0; i < games.length(); i++) {
+
+                        JSONObject item = games.getJSONObject(i);
+
+                        String RegisterNumber = item.getString("RegisterNumber");
+                        String ItemName = item.getString("ItemName");
+                        String Quantity = item.getString("Quantity");
+                        String Price  = item.getString("Price");
+                        adapter.addItem(ContextCompat.getDrawable(AuctionScreen.this,
+                                R.drawable.ic_baseline_account_box_24),ItemName,Price);
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl = "http://ualsgur98.dothome.co.kr/GameAuction.php";
+        PHPRequest validateRequest = new PHPRequest( purl, myGameName,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
+        queue.add(validateRequest);
+
+
         // 리스트 뷰 아이템 추가.
-        for (int i=0; i<10;i++ ) {
-            adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                    "Box", "Account Box Black 36dp");
-        }
+
+        //for (int i=0; i<10;i++ ) {
+          //  adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                //    "Box", "Account Box Black 36dp");
+       // }
         /*
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
                 "Box", "Account Box Black 36dp");
@@ -84,7 +117,7 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
-        }) ;
+        });
 
         //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
         Button buyingbutton = findViewById(R.id.buyButton);
