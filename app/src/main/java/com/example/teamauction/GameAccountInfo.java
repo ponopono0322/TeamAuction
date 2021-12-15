@@ -30,9 +30,7 @@ public class GameAccountInfo implements Serializable {
     public String getGameName() {
         return gameName;
     }
-    public String getCharacterName() {
-        return characterName;
-    }
+    public String getCharacterName() { return characterName; }
     public String getGamePublisherID() {
         return gamePublisherID;
     }
