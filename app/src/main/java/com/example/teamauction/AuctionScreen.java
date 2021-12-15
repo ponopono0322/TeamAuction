@@ -11,10 +11,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
+    private TextView UserCharName;
+    private GameAccountInfo accountInfo;
+
+    private GameAccountInfo accountInfo;
 
     ListView listview = null;
     //경매장 리스트 만드는중
@@ -25,7 +40,15 @@ public class AuctionScreen extends AppCompatActivity {
 
         ListViewAdapter adapter;
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myGameName =accountInfo.getGameName();
+        String myCharName =accountInfo.getCharacterName();
 
+        ListViewAdapter adapter;
+
+        UserCharName = findViewById(R.id.UserCharName);
+        UserCharName.setText(myCharName); //로그인한 계정 캐릭터 이름으로 변경
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -34,15 +57,38 @@ public class AuctionScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
-        // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-               "Box", "Account Box Black 36dp") ;
-        // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Circle", "Account Circle Black 36dp") ;
-        // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Ind", "Assignment Ind Black 36dp") ;
+        // 리스트 뷰 아이템 추가.
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("GameAuction");
+
+
+                    for (int i = 0; i < games.length(); i++) {
+
+                        JSONObject item = games.getJSONObject(i);
+                        String UniNumber = item.getString("UniNum");
+                        String RegisterNumber = item.getString("RegisterNumber");
+                        String ItemName = item.getString("ItemName");
+                        String Quantity = item.getString("Quantity");
+                        String Price  = item.getString("Price");
+                        adapter.addAuctionItem(ContextCompat.getDrawable(AuctionScreen.this,
+                                R.drawable.ic_baseline_account_box_24),ItemName,Price,UniNumber,RegisterNumber);
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl = "http://ualsgur98.dothome.co.kr/GameAuction.php";
+        PHPRequest validateRequest = new PHPRequest( purl, myGameName,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
+        queue.add(validateRequest);
+
 
         //EditText에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
@@ -66,7 +112,7 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
-        }) ;
+        });
 
         //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
         Button buyingbutton = findViewById(R.id.buyButton);
@@ -75,10 +121,15 @@ public class AuctionScreen extends AppCompatActivity {
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    //String ItemCode = item.getText();
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String cost = item.getMassage();
+                    String uninumber = item.getUninumber();
+                    String regnum = item.getRegnumber();
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
-                    //intent.putExtra("data", ItemCode);
+                    intent.putExtra("account_info", accountInfo);
+                    intent.putExtra("cost", cost);
+                    intent.putExtra("myuninum", uninumber);
+                    intent.putExtra("myregnum", regnum);
                     startActivity(intent);
                     //finish();
                 }
@@ -93,6 +144,7 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SellingItemScreen.class);
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
             }
         });
@@ -100,6 +152,7 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ItemCheckScreen.class);
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
             }
         });

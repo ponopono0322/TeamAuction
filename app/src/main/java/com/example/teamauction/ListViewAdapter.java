@@ -134,5 +134,17 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
             }
         }
     }
+
+    public void addAuctionItem(Drawable icon, String text, String msg, String uninum, String regnum) {
+        ListViewItem item = new ListViewItem();
+
+        item.setIcon(icon);
+        item.setText(text);
+        item.setMassage(msg);
+        item.setUninumber(uninum);
+        item.setRegnumber(regnum);
+
+        listViewItemList.add(item);
+    }
 }
 

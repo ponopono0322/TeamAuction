@@ -6,6 +6,10 @@ import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.LinearLayout;
 
+/**
+ * 체크박스에 관해서 직접 설정하기 위해 만든 클래스
+ * LinearLayout을 상속받아 체크박스를 재정의 해준다
+ */
 public class CheckableLinearLayout extends LinearLayout implements Checkable {
     // 만약 CheckBox가 아닌 View를 추가한다면 아래의 변수 사용 가능.
     // private boolean mIsChecked ;

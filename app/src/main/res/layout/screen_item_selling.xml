@@ -15,7 +15,7 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/MyUserCharName"
             android:layout_width="405dp"
             android:layout_height="46dp"
             android:text="user char name"
