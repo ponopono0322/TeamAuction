@@ -7,29 +7,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-// 시작 엑티비티
+/**
+ * 앱 실행시 첫화면
+ * 로그인과 회원가입을 선택할 수 있는 액티비티
+ */
 public class MainStartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        //로그인 버튼으로 화면전환
-        Button goLoginButton = findViewById(R.id.go_login);
-        goLoginButton.setOnClickListener(new View.OnClickListener() {
+
+        Button goLoginButton = findViewById(R.id.go_login); // 로그인화면 전환 버튼
+        goLoginButton.setOnClickListener(new View.OnClickListener() { // 로그인 전환 버튼 클릭시 이벤트 발생
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {    // 버튼에 대한 함수 재정의
+                // Intent로 엑티비티 간 데이터 전송
                 Intent intent = new Intent(MainStartActivity.this, MainLoginActivity.class);
-                startActivity(intent);
+                startActivity(intent);  // 로그인 엑티비티 실행
             }
         });
-        //텍스트뷰로 화면전환
-        Button goSignupButton = findViewById(R.id.go_signup);
-        goSignupButton.setOnClickListener(new View.OnClickListener() {
+
+        Button goSignupButton = findViewById(R.id.go_signup); // 회원가입 화면 전환 버튼
+        goSignupButton.setOnClickListener(new View.OnClickListener() { // 회원가입 버튼 클릭시 이벤트 발생
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {    // 버튼에 대한 함수 재정의
+                // Intent로 엑티비티 간 데이터 전송
                 Intent intent = new Intent(MainStartActivity.this, MainSignupActivity.class);
-                startActivity(intent);
+                startActivity(intent);  // 회원가입 엑티비티 실행
             }
         });
     }
