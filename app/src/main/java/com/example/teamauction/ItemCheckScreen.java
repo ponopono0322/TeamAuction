@@ -50,9 +50,6 @@ public class ItemCheckScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.my_item_list);
         listview.setAdapter(adapter);
 
-        //DB에서 받아온 내 돈으로 변경
-        money = findViewById(R.id.moneyBox);
-        money.setText("500원");
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -84,6 +81,35 @@ public class ItemCheckScreen extends AppCompatActivity {
         PHPRequest validateRequest = new PHPRequest( purl, myGameName,myCharName,responseListener);
         RequestQueue queue = Volley.newRequestQueue(ItemCheckScreen.this);
         queue.add(validateRequest);
+
+
+
+        Response.Listener<String> responseListener1 = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("Money");
+
+                        JSONObject item = games.getJSONObject(0);
+                        String Money1 = item.getString("gameMoney");
+
+                        //DB에서 받아온 내 돈으로 변경
+                        money = findViewById(R.id.moneyBox);
+                        money.setText(Money1);
+
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl1 = "http://ualsgur98.dothome.co.kr/Money.php";
+        PHPRequest validateRequest1 = new PHPRequest( purl1, myGameName,myCharName,responseListener1);
+        RequestQueue queue1 = Volley.newRequestQueue(ItemCheckScreen.this);
+        queue1.add(validateRequest1);
+
 
 
         ImageButton backButton = findViewById(R.id.back_auctionScreen); // 뒤로가기 버튼 경매장 화면으로 이동
