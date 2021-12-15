@@ -64,7 +64,7 @@
 
 
         <TextView
-            android:id="@+id/textView42"
+            android:id="@+id/moneyBox"
             android:layout_width="179dp"
             android:layout_height="42dp"
             android:text="돈"

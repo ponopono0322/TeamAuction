@@ -61,7 +61,7 @@ public class SellingItemScreen extends AppCompatActivity {
                         JSONObject item = games.getJSONObject(i);
                         String RegisterNumber = item.getString("RegisterNumber");
                         String ItemName = item.getString("ItemName");
-                        String Price = item.getString("Price");
+                        String Price = item.getString("ItemPrice");
                         String Quantity = item.getString("Quantity");
 
                         adapter.addAuctionItem(ContextCompat.getDrawable(SellingItemScreen.this,

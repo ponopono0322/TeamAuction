@@ -24,6 +24,7 @@ public class ItemCheckScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView UserCharName;
     private ImageButton backButton;
+    private TextView money;
 
     ListView listview = null;
     @Override
@@ -48,6 +49,10 @@ public class ItemCheckScreen extends AppCompatActivity {
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) findViewById(R.id.my_item_list);
         listview.setAdapter(adapter);
+
+        //DB에서 받아온 내 돈으로 변경
+        money = findViewById(R.id.moneyBox);
+        money.setText("500원");
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
