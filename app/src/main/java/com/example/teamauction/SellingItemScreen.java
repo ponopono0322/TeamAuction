@@ -9,21 +9,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SellingItemScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView UserCharName;
-
+    ListView listview = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_item_selling);
 
-        ListView listview ;
+        //ListView listview ;
         ListViewAdapter adapter;
 
         Intent account_info = getIntent();
         accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myGameName =accountInfo.getGameName();
         String myCharName =accountInfo.getCharacterName();
 
         UserCharName = findViewById(R.id.MyUserCharName);
@@ -36,15 +46,37 @@ public class SellingItemScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.selling_list);
         listview.setAdapter(adapter);
 
-        // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Box", "Account Box Black 36dp") ;
-        // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Circle", "Account Circle Black 36dp") ;
-        // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
-                "Ind", "Assignment Ind Black 36dp") ;
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("Selling");
+
+
+                    for (int i = 0; i < games.length(); i++) {
+
+                        JSONObject item = games.getJSONObject(i);
+                        String RegisterNumber = item.getString("RegisterNumber");
+                        String ItemName = item.getString("ItemName");
+                        String Price = item.getString("Price");
+                        String Quantity = item.getString("Quantity");
+
+                        adapter.addAuctionItem(ContextCompat.getDrawable(SellingItemScreen.this,
+                                R.drawable.ic_baseline_account_box_24),ItemName,Price,Quantity,RegisterNumber );
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl = "http://ualsgur98.dothome.co.kr/Selling.php";
+        PHPRequest validateRequest = new PHPRequest( purl, myGameName,myCharName,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(SellingItemScreen.this);
+        queue.add(validateRequest);
+
 
         //리스트 뷰에 있는 아이템 터치시 DeleteScreen popup창 띄우기
         Button dropingbutton = findViewById(R.id.dropButton);
