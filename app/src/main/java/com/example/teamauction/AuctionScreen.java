@@ -16,6 +16,8 @@ public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
 
+    private GameAccountInfo accountInfo;
+
     ListView listview = null;
     //경매장 리스트 만드는중
     @Override
@@ -23,9 +25,10 @@ public class AuctionScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_auction);
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+
         ListViewAdapter adapter;
-
-
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;

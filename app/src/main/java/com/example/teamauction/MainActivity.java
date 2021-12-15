@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, item.getText()+ " " +
                         item.getMassage() +" data access", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AuctionScreen.class);
+                accountInfo.setGameName(item.getText());
+                accountInfo.setCharacterName(item.getMassage());
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
             }
         });

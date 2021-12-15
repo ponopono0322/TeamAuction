@@ -25,8 +25,16 @@
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
 
 ### 3. 테스트
-|클래스 이름|실행결과|
-|:---:|:---:|
-|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|[.pdf](./design/test/GameAccountInfoTest.pdf)|
+|클래스 이름|실행결과|클래스 이름|실행결과|
+|:------:|:----:|:------:|:----:|
+|[MainStartActivityTest](./app/src/androidTest/java/com/example/teamauction/MainStartActivityTest.java)|[.pdf](./design/test/MainStartActivityTest.pdf) [.html](./design/test/MainStartActivityTest.html)|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|[.pdf](./design/test/GameAccountInfoTest.pdf) [.html](./design/test/GameAccountInfoTest.html)|
+|[MainLoginActivityTest](./app/src/androidTest/java/com/example/teamauction/MainLoginActivityTest.java)|[.pdf](./design/test/MainLoginActivityTest.pdf) [.html](./design/test/MainLoginActivityTest.html)|[ListViewItemTest](./app/src/test/java/com/example/teamauction/ListViewItemTest.java)|[.pdf](./design/test/ListViewItemTest.pdf) [.html](./design/test/ListViewItemTest.html)|||
+|[MainSignupActivityTest](./app/src/androidTest/java/com/example/teamauction/MainSignupActivityTest.java)|[.pdf](./design/test/MainSignupActivityTest.pdf) [.html](./design/test/MainSignupActivityTest.html)|||
+|[MainPasswordActivityTest](./app/src/androidTest/java/com/example/teamauction/MainPasswordActivityTest.java)|[.pdf](./design/test/MainPasswordActivityTest.pdf) [.html](./design/test/MainPasswordActivityTest.html)|||
+|[MainActivityTest](./app/src/androidTest/java/com/example/teamauction/MainActivityTest.java)|[.pdf](./design/test/MainActivityTest.pdf) [.html](./design/test/MainActivityTest.html)|||
+|[GameListActivityTest](./app/src/androidTest/java/com/example/teamauction/GameListActivityTest.java)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|||
+|[GameLoginActivityTest](./app/src/androidTest/java/com/example/teamauction/GameLoginActivityTest.java)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|||
+|[GameChActivityTest](./app/src/androidTest/java/com/example/teamauction/GameChActivityTest.java)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
+
 
 ### [4. WIKI](https://github.com/ponopono0322/TeamAuction/wiki)
