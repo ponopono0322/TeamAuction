@@ -48,7 +48,7 @@ public class PHPRequest extends StringRequest {
         map.put("gamePW", gamePW);
     }
 
-    // 로그인
+    // 로그인,판매중인, 내아이템
     public PHPRequest(String URL, String userID, String userPW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
