@@ -21,9 +21,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
+    private GameAccountInfo accountInfo;
 
     ListView listview = null;
     //경매장 리스트 만드는중
@@ -34,7 +36,9 @@ public class AuctionScreen extends AppCompatActivity {
 
         ListViewAdapter adapter;
 
-
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myGameName =accountInfo.getGameName();
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -43,39 +47,21 @@ public class AuctionScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    JSONArray games = jsonResponse.getJSONArray("GameAuctionList");
-
-                    for (int i = 0; i < games.length(); i++) {
-
-                        JSONObject item = games.getJSONObject(i);
-                        String GameName = item.getString("GameName");
-                        String ItemName = item.getString("ItemName");
-                        String ItemQuantity = item.getString("ItemQuantity");
-                        String ItemPrice  = item.getString("ItemPrice");
-                        String GameID = item.getString("GameID");
-                        adapter.addItem(ContextCompat.getDrawable(AuctionScreen.this,
-                                R.drawable.ic_baseline_account_box_24),ItemName,ItemPrice);
-
-                    }
-                    adapter.notifyDataSetChanged();
-                } catch (JSONException e) { // 접속 오류가 난 것이라면
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-
-        String purl = "http://ualsgur98.dothome.co.kr/GameAuctionList.php";
-        PHPRequest validateRequest = new PHPRequest( purl, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
-        queue.add(validateRequest);
-
-
+        // 리스트 뷰 아이템 추가.
+        for (int i=0; i<10;i++ ) {
+            adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                    "Box", "Account Box Black 36dp");
+        }
+        /*
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                "Box", "Account Box Black 36dp");
+        // 두 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                "Circle", "Account Circle Black 36dp");
+        // 세 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.ic_launcher_background),
+                "Ind", "Assignment Ind Black 36dp");
+         */
         //EditText에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
         editTextFilter.addTextChangedListener(new TextWatcher() {
@@ -107,10 +93,10 @@ public class AuctionScreen extends AppCompatActivity {
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    //String ItemCode = item.getText();
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String ItemName = item.getText();
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
-                    //intent.putExtra("data", ItemCode);
+                    intent.putExtra("data", ItemName);
                     startActivity(intent);
                     //finish();
                 }

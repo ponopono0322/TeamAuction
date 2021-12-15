@@ -12,6 +12,20 @@ public class PHPRequest extends StringRequest {
     private Map<String, String> map;
     private Map<String, Integer> map2;
 
+    // 계정 추가
+    public PHPRequest(String URL, String userID, String userPW, String gameName,
+                      String gameID, String gamePW, String userCh, Response.Listener<String> listener) {
+        super(Method.POST, URL, listener, null);
+
+        map = new HashMap<>();
+        map.put("userID", userID);
+        map.put("userPassword", userPW);
+        map.put("gameName", gameName);
+        map.put("gameID", gameID);
+        map.put("gamePW", gamePW);
+        map.put("gameNickname", userCh);
+    }
+
     // 회원가입
     public PHPRequest(String URL, String userName, String userPhone, String userEmail, String userID, String userPassword, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);

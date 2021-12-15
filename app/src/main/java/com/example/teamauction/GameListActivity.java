@@ -23,17 +23,22 @@ public class GameListActivity extends AppCompatActivity {
 
     private ListViewAdapter adapter;
     private ListView listview;
+    private GameAccountInfo accountInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_account);
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+
         ImageButton go_main = findViewById(R.id.back_account);
         go_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameListActivity.this, MainActivity.class);
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
                 finish();
             }
@@ -78,9 +83,9 @@ public class GameListActivity extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    String gameName = item.getText();
+                    accountInfo.setGameName(item.getText());
                     Intent intent = new Intent(GameListActivity.this, GameLoginActivity.class);
-                    intent.putExtra("data", gameName);
+                    intent.putExtra("account_info", accountInfo);
                     startActivity(intent);
                     finish();
                 }
