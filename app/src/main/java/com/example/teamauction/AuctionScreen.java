@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ import org.json.JSONObject;
 public class AuctionScreen extends AppCompatActivity {
     private Button moveSellingButton;
     private Button moveMyitemButton;
+    private ImageButton backButton;
     private TextView UserCharName;
     private GameAccountInfo accountInfo;
 
@@ -87,7 +89,7 @@ public class AuctionScreen extends AppCompatActivity {
         queue.add(validateRequest);
 
 
-        //EditText에 검색된 값을 받아 함수를 호출
+        //EditText(검색창)에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
         editTextFilter.addTextChangedListener(new TextWatcher() {
             @Override
@@ -111,7 +113,7 @@ public class AuctionScreen extends AppCompatActivity {
             }
         });
 
-        //리스트 뷰에 있는 아이템 터치시 BuyingScreen popup창 띄우기
+        //리스트 뷰에 있는 아이템 터치시 BuyingScreen 창 띄우기
         Button buyingbutton = findViewById(R.id.buyButton);
         buyingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,29 +130,41 @@ public class AuctionScreen extends AppCompatActivity {
                     intent.putExtra("myuninum", uninumber);
                     intent.putExtra("myregnum", regnum);
                     startActivity(intent);
-                    //finish();
+                    finish();
                 }
             }
         });
 
-        //판매중, 내 아이템 이동버튼 구현
-        moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼
-        moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼
+        ImageButton backButton = findViewById(R.id.back_button); // 뒤로가기 버튼 계정 선택 화면으로 이동
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AuctionScreen.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-        moveSellingButton.setOnClickListener(new View.OnClickListener(){
+        //판매중, 내 아이템 이동버튼 구현
+        moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼 정의
+        moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼 정의
+
+        moveSellingButton.setOnClickListener(new View.OnClickListener(){ // 판매중인 아이템으로 이동
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SellingItemScreen.class);
                 intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
+                finish();
             }
         });
-        moveMyitemButton.setOnClickListener(new View.OnClickListener(){
+        moveMyitemButton.setOnClickListener(new View.OnClickListener(){  // 내 아이템으로 이동
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ItemCheckScreen.class);
                 intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
+                finish();
             }
         });
 

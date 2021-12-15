@@ -38,7 +38,7 @@ public class GameAccountInfo implements Serializable {
     public String getLoginID() { return LoginID; }
     public String getLoginPW() { return LoginPW; }
 
-    public void resetData() {
+    public void resetData() { //게임 아이디 정보 다 리셋
         this.gameName = "";
         this.gamePublisherID = "";
         this.gamePublisherPW = "";
