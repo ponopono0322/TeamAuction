@@ -29,8 +29,6 @@ public class AuctionScreen extends AppCompatActivity {
     private TextView UserCharName;
     private GameAccountInfo accountInfo;
 
-    private GameAccountInfo accountInfo;
-
     ListView listview = null;
     //경매장 리스트 만드는중
     @Override
@@ -44,8 +42,6 @@ public class AuctionScreen extends AppCompatActivity {
         accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
         String myGameName =accountInfo.getGameName();
         String myCharName =accountInfo.getCharacterName();
-
-        ListViewAdapter adapter;
 
         UserCharName = findViewById(R.id.UserCharName);
         UserCharName.setText(myCharName); //로그인한 계정 캐릭터 이름으로 변경

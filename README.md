@@ -1,36 +1,37 @@
-# 경매장 앱
-## 목차
-1. 설계 기획 및 계획서
-2. [구현](#2.-구현)
-3. [테스트](#3.-테스트)
-4. [WIKI](#4.-WIKI)
+# 목차
+- [목차](#목차)
+  - [1. Plan](#1-plan)
+  - [2. Implement](#2-implement)
+    - [구성 화면(계정 관련)](#구성-화면계정-관련)
+    - [구성 화면(계정 연동 관련)](#구성-화면계정-연동-관련)
+  - [3. Test](#3-test)
+  - [4. Wiki](#4-wiki)
 
-### 1. 설계 기획 및 계획서
+## 1. Plan
 - [개발 계획서]
 - [개발 분석]
 - [개발 설계]
 - [업데이트 기록](https://github.com/ponopono0322/TeamAuction/pulls?q=is%3Apr+is%3Aclosed)
 - [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
-### 2. 구현
-#### 초기화면 및 메인화면
-|초기화면|메인화면|
-|:---:|:---:|
-|<img src="./design/guide/Screenshot_1639403564.png" width="200px">|<img src="./design/guide/Screenshot_1639452413.png" width="200px">|
+## 2. Implement
+### 구성 화면(계정 관련)
 
-#### 로그인과 회원가입 화면
+*각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
 
-|로그인|회원가입|
-|:---:|:---:|
-|<img src="./design/guide/Screenshot_1639452081.png" width="200px">|<img src="./design/guide/Screenshot_1639452088.png" width="200px">|
+|[초기화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#1-mainstartactivity)|[로그인](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#2-mainloginactivity)|[회원가입](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#3-mainsignupactivity)|[메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
+|:---:|:---:|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639403564.png" width="200px">|<img src="./design/guide/Screenshot_1639452081.png" width="200px">|<img src="./design/guide/Screenshot_1639452088.png" width="200px">|<img src="./design/guide/Screenshot_1639452413.png" width="200px">|
 
+### 구성 화면(계정 연동 관련)
 
-#### 계정 연동(+ 버튼) 과정
-|게임 선택화면|계정 로그인화면|캐릭터 선택화면|연동 후 메인화면|
+*각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
+
+|[게임 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#6-gamelistactivity)|[계정 로그인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#7-gameloginactivity)|[캐릭터 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#8-gamechactivity)|[연동 후 메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
 |:---:|:---:|:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
 
-### 3. 테스트
-- 테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다.
+## 3. Test
+*테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
 
 |클래스 이름|실행결과|클래스 이름|실행결과|
 |:------:|:----:|:------:|:----:|
@@ -44,8 +45,10 @@
 |[GameChActivityTest](./app/src/androidTest/java/com/example/teamauction/GameChActivityTest.java)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
 
 
-### 4. [WIKI](https://github.com/ponopono0322/TeamAuction/wiki)
+## 4. [Wiki](https://github.com/ponopono0322/TeamAuction/wiki)
 - [Java 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Java-Files)
 - [Xml 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Xml-Files)
+- [Php 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Php-Files)
 - [Class 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Class)
 - [Function 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Function)
+- [Php 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Php)
