@@ -10,7 +10,8 @@
     - [구성 화면(계정 관련)](#구성-화면계정-관련)
     - [구성 화면(계정 연동 관련)](#구성-화면계정-연동-관련)
   - [3. Test](#3-test)
-  - [4. Wiki](#4-wiki)
+  - [4. Algorithm](#4-algorithm)
+  - [5. Document](#5-document)
       - [Java 파일 목록](#java-파일-목록)
       - [Xml 파일 목록](#xml-파일-목록)
       - [Php 파일 목록](#php-파일-목록)
@@ -56,8 +57,11 @@
 |[GameLoginActivityTest](./app/src/androidTest/java/com/example/teamauction/GameLoginActivityTest.java)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|||
 |[GameChActivityTest](./app/src/androidTest/java/com/example/teamauction/GameChActivityTest.java)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
 
+## 4. [Algorithm](https://github.com/ponopono0322/TeamAuction/wiki/Plan#project-algorithm)
 
-## 4. [Wiki](https://github.com/ponopono0322/TeamAuction/wiki)
+*위의 링크를 클릭하면 해당 페이지로 이동합니다*
+
+## 5. [Document](https://github.com/ponopono0322/TeamAuction/wiki)
 #### [Java 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Java-Files)
 #### [Xml 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Xml-Files)
 #### [Php 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Php-Files)
