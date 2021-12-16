@@ -1,18 +1,30 @@
-# 목차
-- [목차](#목차)
+# Contents
+- [Contents](#contents)
   - [1. Plan](#1-plan)
+      - [개발 계획서](#개발-계획서)
+      - [개발 분석](#개발-분석)
+      - [개발 설계](#개발-설계)
+      - [업데이트 기록](#업데이트-기록)
+      - [브랜치 기록](#브랜치-기록)
   - [2. Implement](#2-implement)
     - [구성 화면(계정 관련)](#구성-화면계정-관련)
     - [구성 화면(계정 연동 관련)](#구성-화면계정-연동-관련)
   - [3. Test](#3-test)
   - [4. Wiki](#4-wiki)
+      - [Java 파일 목록](#java-파일-목록)
+      - [Xml 파일 목록](#xml-파일-목록)
+      - [Php 파일 목록](#php-파일-목록)
+      - [Class 정의 목록](#class-정의-목록)
+      - [Function 정의 목록](#function-정의-목록)
+      - [Php 정의 목록](#php-정의-목록)
 
 ## 1. Plan
-- [개발 계획서]
-- [개발 분석]
-- [개발 설계]
-- [업데이트 기록](https://github.com/ponopono0322/TeamAuction/pulls?q=is%3Apr+is%3Aclosed)
-- [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
+#### [개발 계획서](https://github.com/ponopono0322/TeamAuction/wiki/Plan#개발-계획서)
+#### [개발 분석](https://github.com/ponopono0322/TeamAuction/wiki/Plan#분석)
+#### [개발 설계](https://github.com/ponopono0322/TeamAuction/wiki/Plan#설계)
+#### [업데이트 기록](https://github.com/ponopono0322/TeamAuction/pulls?q=is%3Apr+is%3Aclosed)
+#### [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
+
 ## 2. Implement
 ### 구성 화면(계정 관련)
 
@@ -46,9 +58,9 @@
 
 
 ## 4. [Wiki](https://github.com/ponopono0322/TeamAuction/wiki)
-- [Java 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Java-Files)
-- [Xml 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Xml-Files)
-- [Php 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Php-Files)
-- [Class 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Class)
-- [Function 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Function)
-- [Php 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Php)
+#### [Java 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Java-Files)
+#### [Xml 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Xml-Files)
+#### [Php 파일 목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#Php-Files)
+#### [Class 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Class)
+#### [Function 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Function)
+#### [Php 정의 목록](https://github.com/ponopono0322/TeamAuction/wiki/Docs#Php)
