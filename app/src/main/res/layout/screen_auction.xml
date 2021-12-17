@@ -55,7 +55,7 @@
         android:backgroundTintMode="add"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Serch Item"
+        android:hint="Serch Item"
         android:textSize="24sp" />
 
     <LinearLayout
