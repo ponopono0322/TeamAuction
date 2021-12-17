@@ -25,7 +25,7 @@ public class BuyingScreen extends AppCompatActivity {
     private EditText editTextquantity;
     private GameAccountInfo accountInfo;
     private TextView ItemName, ItemInfo, ItemPrice;
-
+    ListViewAdapter adapter;
     Button yes_btn, no_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +59,18 @@ public class BuyingScreen extends AppCompatActivity {
 
                     for (int i = 0; i < games.length(); i++) {
                         JSONObject item = games.getJSONObject(i);
-                      //  String UniNum1 = item.getString("UniNum");
-                        String ItemName = item.getString("ItemName");
-                        String ItemInfo = item.getString("ItemInfo");
+                        String UniNum1 = item.getString("UniNum");
+                        String ItemName1 = item.getString("ItemName");
+                        String ItemInfo1 = item.getString("ItemInfo");
 
+                        if(Uninum.equals(UniNum1)){
+                            ItemName.setText(ItemName1);
+                            ItemInfo.setText(ItemInfo1);
+                        }
                       /*adapter.addAuctionItem(ContextCompat.getDrawable(BuyingScreen.this,
                               R.drawable.ic_baseline_account_box_24),ItemName,ItemInfo);*/
                     }
-                    //  adapter.notifyDataSetChanged();
+                    // adapter.notifyDataSetChanged();
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
