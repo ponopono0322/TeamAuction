@@ -26,12 +26,12 @@ import org.json.JSONObject;
 /**
  * 경매장 화면
  * 메인 화면에서 계정을 선택 한 뒤 화면
- * 경매장에서 아이템을 검색, 구매, 내 아이템 화면으로 이동, 판매중인 아이이템 화면으로 이동 할 수 있게 하는 액티비티
+ * 경매장에서 아이템을 검색, 구매 할 아이템을 선택, 내 아이템 화면으로 이동, 판매중인 아이이템 화면으로 이동 할 수 있게 하는 액티비티
  */
 public class AuctionScreen extends AppCompatActivity {
-    private Button moveSellingButton, moveMyitemButton, buyingbutton; // 판매중인 아이템 화면 버튼, 내 아이템 화면 버튼, 구매하기 버튼 정의
-    private ImageButton backButton; // 뒤로가기 버튼 정의
-    private TextView UserCharName; // 유저 게임 닉네임 텍스트뷰 정의
+    private Button moveSellingButton, moveMyitemButton, buyingbutton; // 판매중인 아이템 화면 버튼, 내 아이템 화면 버튼, 구매하기 버튼
+    private ImageButton backButton; // 뒤로가기 버튼
+    private TextView UserCharName; // 유저 게임 닉네임 텍스트뷰
     private GameAccountInfo accountInfo; // 계정 정보에 대한 객체
 
     ListView listview = null;
@@ -71,7 +71,7 @@ public class AuctionScreen extends AppCompatActivity {
                         adapter.addAuctionItem(ContextCompat.getDrawable(AuctionScreen.this,
                                 R.drawable.ic_baseline_account_box_24),ItemName,Price,UniNumber,RegisterNumber); //리스트뷰에 있는 아이템의 이름, 가격, UniNumber, RegisterNumber 정보 저장
                     }
-                    adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged(); // 반복문 수행 후에 리스트가 업데이트 됨을 알림
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
                     e.printStackTrace(); // 오류 추적
                     // 토스트 메세지를 띄워줌
@@ -113,6 +113,7 @@ public class AuctionScreen extends AppCompatActivity {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos); //터치한 아이템의 위치값 받아옴
                     String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
                     String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
+                    // AuctionScreen에서 BuyingScreen으로 가는 intent 준비
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
                     intent.putExtra("account_info", accountInfo); // 구매하기 화면에 계정 정보 보내줌
                     intent.putExtra("myuninum", uninumber); // 구매하기 화면에  Uninumber 보내줌
@@ -142,7 +143,7 @@ public class AuctionScreen extends AppCompatActivity {
         moveSellingButton.setOnClickListener(new View.OnClickListener(){ // 판매중인 아이템 이동 버튼 클릭 이벤트 생성
             @Override
             public void onClick(View v) { // onClick 함수 재정의
-                // SellingItemScreen으로 갈 intent 생성 후
+                // AuctionScreen에서 SellingScreen으로 가는 intent 준비
                 Intent intent = new Intent(getApplicationContext(), SellingItemScreen.class);
                 intent.putExtra("account_info", accountInfo); // intent에 게임 계정 데이터 추가
                 startActivity(intent);  // SellingItemScreen 실행
@@ -152,7 +153,7 @@ public class AuctionScreen extends AppCompatActivity {
         moveMyitemButton.setOnClickListener(new View.OnClickListener(){  // 내 아이템 이동 버튼 클릭 이벤트 생성
             @Override
             public void onClick(View v) {
-                // ItemCheckScreen으로 갈 intent 생성 후
+                // AuctionScreen에서 ItemCheckScreen으로 가는 intent 준비
                 Intent intent = new Intent(getApplicationContext(), ItemCheckScreen.class);
                 intent.putExtra("account_info", accountInfo); // intent에 게임 계정 데이터 추가
                 startActivity(intent); // ItemCheckScreen 실행

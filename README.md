@@ -19,14 +19,14 @@
       - [Function 정의 목록](#function-정의-목록)
       - [Php 정의 목록](#php-정의-목록)
 
-## 1. Plan
+## 1. [Plan](https://github.com/ponopono0322/TeamAuction/wiki/Plan)
 #### [개발 계획서](https://github.com/ponopono0322/TeamAuction/wiki/Plan#개발-계획서)
 #### [개발 분석](https://github.com/ponopono0322/TeamAuction/wiki/Plan#분석)
 #### [개발 설계](https://github.com/ponopono0322/TeamAuction/wiki/Plan#설계)
 #### [업데이트 기록](https://github.com/ponopono0322/TeamAuction/pulls?q=is%3Apr+is%3Aclosed)
 #### [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
 
-## 2. Implement
+## 2. [Implement](https://github.com/ponopono0322/TeamAuction/wiki/Plan#구현)
 ### 구성 화면(계정 관련)
 
 *각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
