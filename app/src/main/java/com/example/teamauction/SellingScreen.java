@@ -45,8 +45,8 @@ public class SellingScreen extends AppCompatActivity {
         yes_btn = findViewById(R.id.sell_check_yes);
         no_btn = findViewById(R.id.sell_check_no);
 
-        ItemName = findViewById(R.id.buyingItemName); //게임 아이템 이름 들어갈 공간 생성
-        ItemInfo = findViewById(R.id.buyingItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
+        ItemName = findViewById(R.id.SellingItemName); //게임 아이템 이름 들어갈 공간 생성
+        ItemInfo = findViewById(R.id.SellingItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
 
         editTextcost = findViewById(R.id.sellCostBox); //판매하려는 가격 입력하는 공간 생성
         editTextquantity = findViewById(R.id.sellQuantityBox); //판매하려는 수량 입력하는 공간 생성

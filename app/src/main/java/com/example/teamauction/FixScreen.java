@@ -48,8 +48,8 @@ public class FixScreen extends AppCompatActivity {
         editTextcost = findViewById(R.id.fixCostBox);  //수정하려는 가격 입력하는 공간 생성
         editTextquantity = findViewById(R.id.fixQuantityBox);  //수정하려는 수량 입력하는 공간 생성
 
-        ItemName = findViewById(R.id.buyingItemName); //게임 아이템 이름 들어갈 공간 생성
-        ItemInfo = findViewById(R.id.buyingItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
+        ItemName = findViewById(R.id.FixItemName); //게임 아이템 이름 들어갈 공간 생성
+        ItemInfo = findViewById(R.id.FixItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
 
         //수정하려는 아이템 정보를 DB에서 받아와 화면에 보여줌
         Response.Listener<String> responseListener = new Response.Listener<String>() {
