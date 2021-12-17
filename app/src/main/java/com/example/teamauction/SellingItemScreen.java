@@ -19,11 +19,13 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class SellingItemScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView UserCharName;
     private ImageButton backButton;
+    private TextView money;
     ListView listview = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,9 @@ public class SellingItemScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(SellingItemScreen.this);
         queue.add(validateRequest);
 
+        //내 돈 띄워주기 구현
+        money = findViewById(R.id.myMoneyBox;
+        money.setText(Money1);
 
         ImageButton backButton = findViewById(R.id.back_auctionScreen2); // 뒤로가기 버튼 경매장 화면으로 이동
         backButton.setOnClickListener(new View.OnClickListener() {

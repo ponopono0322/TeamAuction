@@ -16,6 +16,7 @@ public class BuyingScreen extends AppCompatActivity {
     private TextView buyCostBox;
     private EditText editTextquantity;
     private GameAccountInfo accountInfo;
+    private TextView ItemName, ItemInfo, ItemPrice;
 
     Button yes_btn, no_btn;
     @Override
@@ -30,6 +31,14 @@ public class BuyingScreen extends AppCompatActivity {
         String Price = intent.getExtras().getString("cost");
         String Uninum = intent.getExtras().getString("myuninum");
         String Regnum = intent.getExtras().getString("myregnum");
+
+
+        ItemName = findViewById(R.id.buyingItemName);
+        ItemName.setText(myCharName);
+        ItemInfo = findViewById(R.id.buyingItemInfo);
+        ItemInfo.setText(myCharName);
+        ItemPrice = findViewById(R.id.BuyingItemPrice);
+        ItemPrice.setText(myCharName);
 
 
         //UI 객체생성

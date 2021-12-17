@@ -62,11 +62,11 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
         android:layout_below="@+id/auctionList"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
 
         <ImageButton
             android:id="@+id/imageButton9"
