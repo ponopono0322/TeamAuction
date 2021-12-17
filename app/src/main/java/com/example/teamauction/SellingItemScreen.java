@@ -125,8 +125,12 @@ public class SellingItemScreen extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
+                    String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
                     Intent intent = new Intent(SellingItemScreen.this, DeleteScreen.class);
-                    intent.putExtra("account_info", accountInfo);
+                    intent.putExtra("account_info", accountInfo); // 판매하기 화면에 계정 정보 보내줌
+                    intent.putExtra("myuninum", uninumber); // 판매하기 화면에  Uninumber 보내줌
+                    intent.putExtra("myregnum", regnum); // 판매하기 화면에 RegisterNumber 보내줌
                     startActivity(intent);
                     finish();
                 }
@@ -141,8 +145,12 @@ public class SellingItemScreen extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
+                    String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
                     Intent intent = new Intent(SellingItemScreen.this, FixScreen.class);
-                    intent.putExtra("account_info", accountInfo);
+                    intent.putExtra("account_info", accountInfo); // 삭제하기 화면에 계정 정보 보내줌
+                    intent.putExtra("myuninum", uninumber); // 삭제하기 화면에  Uninumber 보내줌
+                    intent.putExtra("myregnum", regnum); // 삭제하기 화면에 RegisterNumber 보내줌
                     startActivity(intent);
                     finish();
                 }

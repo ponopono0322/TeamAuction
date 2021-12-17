@@ -22,6 +22,7 @@ public class SellingScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
     private TextView ItemName, ItemInfo;
     Button yes_btn, no_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +67,7 @@ public class SellingScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl = "http://ualsgur98.dothome.co.kr/BuyItemInfo.php";
+        String purl = "http://ualsgur98.dothome.co.kr/.php";
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(SellingScreen.this);
         queue.add(validateRequest);
@@ -78,6 +79,28 @@ public class SellingScreen extends AppCompatActivity {
                 String get_textcost = editTextcost.getText().toString();
                 String get_textquan = editTextquantity.getText().toString();
 
+                Response.Listener<String> responseListener3 = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (success) {  // 서버 통신
+
+                            } else { // success가 false일 때
+                                    Toast.makeText(getApplicationContext(), "서버와 연결이 끊겼습니다", Toast.LENGTH_SHORT).show();
+                                    return;
+                            }
+                        } catch (JSONException e) { // 접속 오류가 난 것이라면
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                };
+                String purl3 = "http://ualsgur98.dothome.co.kr/.php";
+                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, get_textcost, get_textquan, myCharName, responseListener3);
+                RequestQueue queue3 = Volley.newRequestQueue(SellingScreen.this);
+                queue3.add(validateRequest3);
 
                 //Toast.makeText(getApplicationContext(), get_textcost, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SellingScreen.this, ItemCheckScreen.class);
