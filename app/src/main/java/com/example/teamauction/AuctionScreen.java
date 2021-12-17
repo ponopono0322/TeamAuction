@@ -71,7 +71,7 @@ public class AuctionScreen extends AppCompatActivity {
                         String UniNumber = item.getString("UniNum");
                         String RegisterNumber = item.getString("RegisterNumber");
                         String ItemName = item.getString("ItemName");
-                        String Quantity = item.getString("Quantity");
+                        //String Quantity = item.getString("Quantity");
                         String Price  = item.getString("Price");
                         adapter.addAuctionItem(ContextCompat.getDrawable(AuctionScreen.this,
                                 R.drawable.ic_baseline_account_box_24),ItemName,Price,UniNumber,RegisterNumber);
@@ -117,13 +117,6 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable edit) {
                 String filterText = edit.toString() ;
-                /*
-                if (filterText.length() > 0) {
-                    listview.setFilterText(filterText) ;
-                } else {
-                    listview.clearTextFilter() ;
-                }
-                 */
                 ((ListViewAdapter)listview.getAdapter()).getFilter().filter(filterText); //ListView를 통하지 않고 Adapter로부터 직접 Filter 객체의 참조를 가져와서 filter() 함수를 호출 하여 텍스트 팝업이 안뜨게 함
             }
             @Override
@@ -143,12 +136,11 @@ public class AuctionScreen extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    String cost = item.getMassage();
+                    //String cost = item.getMassage();
                     String uninumber = item.getUninumber();
                     String regnum = item.getRegnumber();
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
                     intent.putExtra("account_info", accountInfo);
-                    intent.putExtra("cost", cost);
                     intent.putExtra("myuninum", uninumber);
                     intent.putExtra("myregnum", regnum);
                     startActivity(intent);
@@ -162,6 +154,7 @@ public class AuctionScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AuctionScreen.this, MainActivity.class);
+                intent.putExtra("account_info", accountInfo);
                 startActivity(intent);
                 finish();
             }
