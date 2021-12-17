@@ -75,7 +75,7 @@ public class FixScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+        String purl = "http://ualsgur98.dothome.co.kr/FixItemInfo.php"; // 통신할 php 주소
         // 데이터 전송을 위한 데이터 세팅
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(FixScreen.this); // 큐를 생성
