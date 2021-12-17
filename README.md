@@ -43,8 +43,9 @@
 |:---:|:---:|:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
 
-## 3. Test
-*테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
+## 3. [Test](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)
+- *테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
+- *수행한 테스트 정의는 [이곳](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)에서 확인할 수 있습니다*
 
 |클래스 이름|실행결과|클래스 이름|실행결과|
 |:------:|:----:|:------:|:----:|
