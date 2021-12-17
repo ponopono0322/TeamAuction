@@ -52,8 +52,8 @@ public class BuyingScreen extends AppCompatActivity {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if (success) { // 서버 통신
-                        String BuyItemName = jsonResponse.getString("");
-                        String BuyItemInfo = jsonResponse.getString("");
+                        String BuyItemName = jsonResponse.getString("ItemName");
+                        String BuyItemInfo = jsonResponse.getString("ItemInfo");
                         ItemName.setText(BuyItemName);
                         ItemInfo.setText(BuyItemInfo);
                     } else {//success가 false일 때
@@ -91,7 +91,7 @@ public class BuyingScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl2 = "http://ualsgur98.dothome.co.kr/.php";
+        String purl2 = "http://ualsgur98.dothome.co.kr/CostInfo.php";
         PHPRequest validateRequest2 = new PHPRequest(purl2, myGameName, Regnum, responseListener2);
         RequestQueue queue2 = Volley.newRequestQueue(BuyingScreen.this);
         queue2.add(validateRequest2);

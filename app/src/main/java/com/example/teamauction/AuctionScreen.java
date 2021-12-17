@@ -42,7 +42,6 @@ public class AuctionScreen extends AppCompatActivity {
         String myGameName =accountInfo.getGameName(); // 게임 이름 정보 가져오기
         String myCharName =accountInfo.getCharacterName(); // 게임 캐릭터 닉네임 정보 가져오기
 
-
         UserCharName = findViewById(R.id.UserCharName); //유저 닉네임 들어갈 공간 생성
         UserCharName.setText(myCharName); //로그인한 계정 캐릭터 이름으로 변경
 
