@@ -9,6 +9,7 @@
   - [2. Implement](#2-implement)
     - [구성 화면(계정 관련)](#구성-화면계정-관련)
     - [구성 화면(계정 연동 관련)](#구성-화면계정-연동-관련)
+    - [구성 화면(경매장 로딩과 필터링)](#구성-화면경매장-로딩과-필터링)
   - [3. Test](#3-test)
   - [4. Algorithm](#4-algorithm)
   - [5. Document](#5-document)
@@ -27,9 +28,8 @@
 #### [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
 
 ## 2. [Implement](https://github.com/ponopono0322/TeamAuction/wiki/Plan#구현)
-### 구성 화면(계정 관련)
-
 *각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
+### 구성 화면(계정 관련)
 
 |[초기화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#1-mainstartactivity)|[로그인](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#2-mainloginactivity)|[회원가입](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#3-mainsignupactivity)|[메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
 |:---:|:---:|:---:|:---:|
@@ -37,11 +37,15 @@
 
 ### 구성 화면(계정 연동 관련)
 
-*각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
-
 |[게임 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#6-gamelistactivity)|[계정 로그인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#7-gameloginactivity)|[캐릭터 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#8-gamechactivity)|[연동 후 메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
 |:---:|:---:|:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
+
+### 구성 화면(경매장 로딩과 필터링)
+
+|[경매장 화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#16-auctionscreen)|[아이템 검색](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#16-auctionscreen)|[내 경매목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#20-sellingitemscreen)|[아이템 구입](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#17-buyingscreen)|
+|:---:|:---:|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639764180.png" width="200px">|<img src="./design/guide/Screenshot_1639764762.png" width="200px">|<img src="./design/guide/Screenshot_1639764359.png" width="200px">|<img src="./design/guide/Screenshot_1639764356.png" width="200px">|
 
 ## 3. [Test](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)
 - *테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
