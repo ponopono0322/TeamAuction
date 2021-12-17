@@ -126,10 +126,12 @@ public class ItemCheckScreen extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
+                    String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
                     Intent intent = new Intent(ItemCheckScreen.this, SellingScreen.class);
                     intent.putExtra("account_info", accountInfo); // 구매하기 화면에 계정 정보 보내줌
-                    //intent.putExtra("myuninum", uninumber); // 구매하기 화면에  Uninumber 보내줌
-                    //intent.putExtra("myregnum", regnum); // 구매하기 화면에 RegisterNumber 보내줌
+                    intent.putExtra("myuninum", uninumber); // 구매하기 화면에  Uninumber 보내줌
+                    intent.putExtra("myregnum", regnum); // 구매하기 화면에 RegisterNumber 보내줌
                     startActivity(intent);
                     finish();
                 }

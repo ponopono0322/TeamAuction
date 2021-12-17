@@ -27,8 +27,8 @@ public class FixScreen extends AppCompatActivity {
         yes_btn = findViewById(R.id.fix_check_yes);
         no_btn = findViewById(R.id.fix_check_no);
 
-        editTextcost = findViewById(R.id.fixCostBox);
-        editTextquantity = findViewById(R.id.fixQuantityBox);
+        editTextcost = findViewById(R.id.fixCostBox);  //수정하려는 가격 입력하는 공간 생성
+        editTextquantity = findViewById(R.id.fixQuantityBox);  //수정하려는 수량 입력하는 공간 생성
 
 
         //예 버튼을 눌렀을때 값 저장

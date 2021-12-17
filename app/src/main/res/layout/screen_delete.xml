@@ -34,7 +34,7 @@
         tools:layout_editor_absoluteX="1dp">
 
         <TextView
-            android:id="@+id/BuyingItemPrice"
+            android:id="@+id/dropItemPrice"
             android:layout_width="62dp"
             android:layout_height="44dp"
             android:text="가격"
@@ -44,7 +44,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/buyCostBox"
+            android:id="@+id/dropCostBox"
             android:layout_width="134dp"
             android:layout_height="49dp"
             android:backgroundTint="@color/black"
@@ -72,7 +72,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/buyQuantityBox"
+            android:id="@+id/dropQuantityBox"
             android:layout_width="134dp"
             android:layout_height="49dp"
             android:backgroundTint="@color/black"

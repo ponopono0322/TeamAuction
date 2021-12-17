@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 public class DeleteScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo;
-    private TextView ItemName, ItemInfo, ItemPrice;
+    private TextView ItemName, ItemInfo, ItemPrice, ItemQuen;
     Button yes_btn, no_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class DeleteScreen extends AppCompatActivity {
 
         ItemName = findViewById(R.id.dropItemName); //게임 아이템 이름 들어갈 공간 생성
         ItemInfo = findViewById(R.id.dropItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
+        ItemPrice = findViewById(R.id.dropCostBox); //게임 아이템 가격정보 들어갈 공간 생성
+        ItemQuen = findViewById(R.id.dropQuantityBox); //게임 아이템 가격정보 들어갈 공간 생성
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -62,6 +64,32 @@ public class DeleteScreen extends AppCompatActivity {
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(DeleteScreen.this);
         queue.add(validateRequest);
+
+        Response.Listener<String> responseListener2 = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if (success) {  // 서버 통신
+                        String cost = jsonResponse.getString("Price");
+                        String quen = jsonResponse.getString("");
+                        ItemPrice.setText(cost);
+                        ItemQuen.setText(quen);
+                    } else {        // success가 false일 때
+                        Toast.makeText(getApplicationContext(), "서버와 연결이 끊겼습니다", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl2 = "http://ualsgur98.dothome.co.kr/.php";
+        PHPRequest validateRequest2 = new PHPRequest(purl2, myGameName, Regnum, responseListener2);
+        RequestQueue queue2 = Volley.newRequestQueue(DeleteScreen.this);
+        queue2.add(validateRequest2);
 
         //UI 객체생성
         yes_btn = findViewById(R.id.drop_check_yes);

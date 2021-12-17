@@ -107,7 +107,6 @@ public class AuctionScreen extends AppCompatActivity {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos); //터치한 아이템의 위치값 받아옴
-                    //String cost = item.getMassage();
                     String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
                     String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
