@@ -9,6 +9,8 @@
   - [2. Implement](#2-implement)
     - [구성 화면(계정 관련)](#구성-화면계정-관련)
     - [구성 화면(계정 연동 관련)](#구성-화면계정-연동-관련)
+    - [구성 화면(경매장 로딩과 필터링)](#구성-화면경매장-로딩과-필터링)
+    - [구성 화면(구매, 삭제, 수정, 판매요청)](#구성-화면구매-삭제-수정-판매요청)
   - [3. Test](#3-test)
   - [4. Algorithm](#4-algorithm)
   - [5. Document](#5-document)
@@ -27,9 +29,8 @@
 #### [브랜치 기록](https://github.com/ponopono0322/TeamAuction/network)
 
 ## 2. [Implement](https://github.com/ponopono0322/TeamAuction/wiki/Plan#구현)
-### 구성 화면(계정 관련)
-
 *각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
+### 구성 화면(계정 관련)
 
 |[초기화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#1-mainstartactivity)|[로그인](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#2-mainloginactivity)|[회원가입](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#3-mainsignupactivity)|[메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
 |:---:|:---:|:---:|:---:|
@@ -37,11 +38,21 @@
 
 ### 구성 화면(계정 연동 관련)
 
-*각 표 제목을 클릭하면 관련 문서(Wiki)로 이동합니다*
-
 |[게임 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#6-gamelistactivity)|[계정 로그인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#7-gameloginactivity)|[캐릭터 선택화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#8-gamechactivity)|[연동 후 메인화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#5-mainactivity)|
 |:---:|:---:|:---:|:---:|
 |<img src="./design/guide/Screenshot_1639452416.png" width="200px">|<img src="./design/guide/Screenshot_1639452420.png" width="200px">|<img src="./design/guide/Screenshot_1639452428.png" width="200px">|<img src="./design/guide/Screenshot_1639452430.png" width="200px">|
+
+### 구성 화면(경매장 로딩과 필터링)
+
+|[경매장 화면](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#16-auctionscreen)|[아이템 검색](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#16-auctionscreen)|[내 경매목록](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#20-sellingitemscreen)|[내 아이템](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#22-itemcheckscreen)|
+|:---:|:---:|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639764180.png" width="200px">|<img src="./design/guide/Screenshot_1639764762.png" width="200px">|<img src="./design/guide/Screenshot_1639764359.png" width="200px">|<img src="./design/guide/Screenshot_1639777705.png" width="200px">|
+
+### 구성 화면(구매, 삭제, 수정, 판매요청)
+
+|[아이템 구입](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#17-buyingscreen)|[아이템 삭제](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#18-deletescreen)|[아이템 수정](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#19-fixscreen)|[아이템 판매](https://github.com/ponopono0322/TeamAuction/wiki/Project-Files#21-sellingscreen)|
+|:---:|:---:|:---:|:---:|
+|<img src="./design/guide/Screenshot_1639764356.png" width="200px">|<img src="./design/guide/Screenshot_1639780109.png" width="200px">|<img src="./design/guide/Screenshot_1639780117.png" width="200px">|<img src="./design/guide/Screenshot_1639780133.png" width="200px">|
 
 ## 3. [Test](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)
 - *테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
@@ -50,13 +61,14 @@
 |클래스 이름|실행결과|클래스 이름|실행결과|
 |:------:|:----:|:------:|:----:|
 |[MainStartActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainstartactivitytest)|[.pdf](./design/test/MainStartActivityTest.pdf) [.html](./design/test/MainStartActivityTest.html)|[GameAccountInfoTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameaccountinfotest)|[.pdf](./design/test/GameAccountInfoTest.pdf) [.html](./design/test/GameAccountInfoTest.html)|
-|[MainLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainloginactivitytest)|[.pdf](./design/test/MainLoginActivityTest.pdf) [.html](./design/test/MainLoginActivityTest.html)|[ListViewItemTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#listviewitemtest)|[.pdf](./design/test/ListViewItemTest.pdf) [.html](./design/test/ListViewItemTest.html)|||
-|[MainSignupActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainsignupactivitytest)|[.pdf](./design/test/MainSignupActivityTest.pdf) [.html](./design/test/MainSignupActivityTest.html)|||
-|[MainPasswordActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainpasswordactivitytest)|[.pdf](./design/test/MainPasswordActivityTest.pdf) [.html](./design/test/MainPasswordActivityTest.html)|||
-|[MainActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainactivitytest)|[.pdf](./design/test/MainActivityTest.pdf) [.html](./design/test/MainActivityTest.html)|||
-|[GameListActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamelistactivitytest)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|||
-|[GameLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameloginactivitytest)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|||
-|[GameChActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamechactivitytest)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
+|[MainLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainloginactivitytest)|[.pdf](./design/test/MainLoginActivityTest.pdf) [.html](./design/test/MainLoginActivityTest.html)|[ListViewItemTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#listviewitemtest)|[.pdf](./design/test/ListViewItemTest.pdf) [.html](./design/test/ListViewItemTest.html)|
+|[MainSignupActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainsignupactivitytest)|[.pdf](./design/test/MainSignupActivityTest.pdf) [.html](./design/test/MainSignupActivityTest.html)|[AuctionScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#AuctionScreenTest)|[.pdf](./design/test/AuctionScreenTest.pdf) [.html](./design/test/AuctionScreenTest.html)|
+|[MainPasswordActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainpasswordactivitytest)|[.pdf](./design/test/MainPasswordActivityTest.pdf) [.html](./design/test/MainPasswordActivityTest.html)|[BuyingScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#BuyingScreenTest)|[.pdf](./design/test/BuyingScreenTest.pdf) [.html](./design/test/BuyingScreenTest.html)|
+|[MainActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainactivitytest)|[.pdf](./design/test/MainActivityTest.pdf) [.html](./design/test/MainActivityTest.html)|[SellingItemScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#SellingItemScreenTest)|[.pdf](./design/test/SellingItemScreenTest.pdf) [.html](./design/test/SellingItemScreenTest.html)|
+|[GameListActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamelistactivitytest)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|[DeleteScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#deletescreentest)|[.pdf](./design/test/DeleteScreenTest.pdf) [.html](./design/test/DeleteScreenTest.html)|
+|[GameLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameloginactivitytest)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|[FixScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#fixscreentest)|[.pdf](./design/test/FixScreenTest.pdf) [.html](./design/test/FixScreenTest.html)|
+|[GameChActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamechactivitytest)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|[SellingScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#sellingscreentest)|[.pdf](./design/test/SellingScreenTest.pdf) [.html](./design/test/SellingScreenTest.html)|
+|||[ItemCheckScreen](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#ItemCheckScreen)|[.pdf](./design/test/ItemCheckScreen.pdf) [.html](./design/test/ItemCheckScreen.html)|
 
 ## 4. [Algorithm](https://github.com/ponopono0322/TeamAuction/wiki/Plan#project-algorithm)
 

@@ -48,8 +48,8 @@ public class FixScreen extends AppCompatActivity {
         editTextcost = findViewById(R.id.fixCostBox);  //수정하려는 가격 입력하는 공간 생성
         editTextquantity = findViewById(R.id.fixQuantityBox);  //수정하려는 수량 입력하는 공간 생성
 
-        ItemName = findViewById(R.id.buyingItemName); //게임 아이템 이름 들어갈 공간 생성
-        ItemInfo = findViewById(R.id.buyingItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
+        ItemName = findViewById(R.id.FixItemName); //게임 아이템 이름 들어갈 공간 생성
+        ItemInfo = findViewById(R.id.FixItemInfo); //게임 아이템 고유정보 들어갈 공간 생성
 
         //수정하려는 아이템 정보를 DB에서 받아와 화면에 보여줌
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -75,7 +75,7 @@ public class FixScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+        String purl = "http://ualsgur98.dothome.co.kr/FixItemInfo.php"; // 통신할 php 주소
         // 데이터 전송을 위한 데이터 세팅
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(FixScreen.this); // 큐를 생성

@@ -81,6 +81,8 @@ public class BuyingScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(BuyingScreen.this); // 큐를 생성
         queue.add(validateRequest); // 큐에 추가
 
+        String DBItemName = ItemName.getText().toString();//아이템 이름 받아오기
+
         //구매 버튼을 눌렀을때 값 저장, 내 아이템 화면으로 돌아감
         Response.Listener<String> responseListener2 = new Response.Listener<String>() { // 구매 버튼 클릭 이벤트 생성
             @Override
@@ -130,7 +132,8 @@ public class BuyingScreen extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response); // json 형태로 받기 위해 객체 준비
                             boolean success = jsonResponse.getBoolean("success");  // success라는 key 값으로 boolean value를 받음
                             if (success) {  // success가 참이라면
-
+                                // 토스트 메세지를 띄워줌
+                                Toast.makeText(getApplicationContext(), "구매하셨습니다", Toast.LENGTH_SHORT).show();
                             }
                             else { // success가 false일 때
                                 // 토스트 메세지를 띄워줌
@@ -144,18 +147,13 @@ public class BuyingScreen extends AppCompatActivity {
                         }
                     }
                 };
-                String purl3 = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+                String purl3 = "http://ualsgur98.dothome.co.kr/Buy.php"; // 통신할 php 주소
                 // 데이터 전송을 위한 데이터 세팅
-                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, getTextQuan, myCharName, responseListener3);
+                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, Uninum, getTextQuan, myCharName, DBItemName, responseListener3);
                 RequestQueue queue3 = Volley.newRequestQueue(BuyingScreen.this); // 큐를 생성
                 queue3.add(validateRequest3);  // 큐에 추가
-
                 // 토스트 메세지를 띄워줌
                 Toast.makeText(getApplicationContext(), ItemName+getTextQuan+"개를 구매하셨습니다.", Toast.LENGTH_SHORT).show();
-
-                //Toast.makeText(getApplicationContext(), "돈이 부족합니다", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(getApplicationContext(), "전체 개수 이하로 적어주세요.", Toast.LENGTH_SHORT).show();
-
                 // BuyingScreen에서 AuctionScreen으로 가는 intent 준비
                 Intent intent = new Intent(getApplicationContext(), AuctionScreen.class);
                 intent.putExtra("account_info", accountInfo); // intent에 게임 계정 데이터 추가

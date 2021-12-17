@@ -69,7 +69,7 @@ public class DeleteScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+        String purl = "http://ualsgur98.dothome.co.kr/Del.php"; // 통신할 php 주소
         // 데이터 전송을 위한 데이터 세팅
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(DeleteScreen.this); // 큐를 생성
@@ -84,7 +84,7 @@ public class DeleteScreen extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");  // success라는 key 값으로 boolean value를 받음
                     if (success) {  // success가 참이라면
                         String cost = jsonResponse.getString("Price"); // Price 데이터 저장
-                        String quen = jsonResponse.getString("");  //  데이터 저장
+                        String quen = jsonResponse.getString("Quantity");  //  데이터 저장
                         ItemPrice.setText(cost); // DB에서 받아온 가격으로 변경
                         ItemQuen.setText(quen); // DB에서 받아온 수량으로 변경
                     } else { // success가 false일 때
@@ -99,7 +99,7 @@ public class DeleteScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl2 = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+        String purl2 = "http://ualsgur98.dothome.co.kr/DelCostInfo.php"; // 통신할 php 주소
         // 데이터 전송을 위한 데이터 세팅
         PHPRequest validateRequest2 = new PHPRequest(purl2, myGameName, Regnum, responseListener2);
         RequestQueue queue2 = Volley.newRequestQueue(DeleteScreen.this); // 큐를 생성
