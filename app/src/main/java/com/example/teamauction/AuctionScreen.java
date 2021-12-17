@@ -25,8 +25,7 @@ import org.json.JSONObject;
 
 
 public class AuctionScreen extends AppCompatActivity {
-    private Button moveSellingButton;
-    private Button moveMyitemButton;
+    private Button moveSellingButton, moveMyitemButton, buyingbutton;
     private ImageButton backButton;
     private TextView UserCharName;
     private GameAccountInfo accountInfo;
@@ -37,16 +36,14 @@ public class AuctionScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_auction);
-
-        ListViewAdapter adapter;
-
-        Intent account_info = getIntent();
+        ListViewAdapter adapter; // 어뎁터 선언
+        Intent account_info = getIntent(); // 로그인 계정 정보 받기
         accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
-        String myGameName =accountInfo.getGameName();
-        String myCharName =accountInfo.getCharacterName();
+        String myGameName =accountInfo.getGameName(); // 게임 이름 정보 가져오기
+        String myCharName =accountInfo.getCharacterName(); // 게임 캐릭터 닉네임 정보 가져오기
 
 
-        UserCharName = findViewById(R.id.UserCharName);
+        UserCharName = findViewById(R.id.UserCharName); //유저 닉네임 들어갈 공간 생성
         UserCharName.setText(myCharName); //로그인한 계정 캐릭터 이름으로 변경
 
         // Adapter 생성
@@ -56,25 +53,22 @@ public class AuctionScreen extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.auctionList);
         listview.setAdapter(adapter);
 
-        // 리스트 뷰 아이템 추가.
+        //경매장 리스트 정보를 DB에서 받아와 리스트뷰에 보여줌
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONArray games = jsonResponse.getJSONArray("GameAuction");
-
-
                     for (int i = 0; i < games.length(); i++) {
-
                         JSONObject item = games.getJSONObject(i);
-                        String UniNumber = item.getString("UniNum");
-                        String RegisterNumber = item.getString("RegisterNumber");
-                        String ItemName = item.getString("ItemName");
+                        String UniNumber = item.getString("UniNum"); //아이템의 UniNumber 받아옴
+                        String RegisterNumber = item.getString("RegisterNumber"); //아이템의 RegisterNumber 받아옴
+                        String ItemName = item.getString("ItemName"); //아이템의 이름 받아옴
                         //String Quantity = item.getString("Quantity");
-                        String Price  = item.getString("Price");
+                        String Price  = item.getString("Price"); // 아이템의 가격 받아옴
                         adapter.addAuctionItem(ContextCompat.getDrawable(AuctionScreen.this,
-                                R.drawable.ic_baseline_account_box_24),ItemName,Price,UniNumber,RegisterNumber);
+                                R.drawable.ic_baseline_account_box_24),ItemName,Price,UniNumber,RegisterNumber); //리스트뷰에 있는 아이템의 이름, 가격, UniNumber, RegisterNumber 정보 저장
                     }
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
@@ -88,28 +82,6 @@ public class AuctionScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
         queue.add(validateRequest);
 
-        Response.Listener<String> responseListener1 = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonResponse = new JSONObject(response);
-                    JSONArray games = jsonResponse.getJSONArray("Money");
-
-                    JSONObject item = games.getJSONObject(0);
-                    String Money1 = item.getString("gameMoney");
-                    //DB에서 받아온 내 돈으로 변경
-
-                    adapter.notifyDataSetChanged();
-                } catch (JSONException e) { // 접속 오류가 난 것이라면
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-        String purl1 = "http://ualsgur98.dothome.co.kr/Money.php";
-        PHPRequest validateRequest1 = new PHPRequest( purl1, myGameName,myCharName,responseListener1);
-        RequestQueue queue1 = Volley.newRequestQueue(AuctionScreen.this);
-        queue1.add(validateRequest1);
 
         //EditText(검색창)에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;
@@ -128,28 +100,28 @@ public class AuctionScreen extends AppCompatActivity {
             }
         });
 
-        //리스트 뷰에 있는 아이템 터치시 BuyingScreen 창 띄우기
-        Button buyingbutton = findViewById(R.id.buyButton);
+        //리스트 뷰에 있는 아이템을 터치하고 구매하기 버튼을 누르면 BuyingScreen 창 띄우기
+        buyingbutton = findViewById(R.id.buyButton);
         buyingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos); //터치한 아이템의 위치값 받아옴
                     //String cost = item.getMassage();
-                    String uninumber = item.getUninumber();
-                    String regnum = item.getRegnumber();
+                    String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
+                    String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
                     Intent intent = new Intent(AuctionScreen.this, BuyingScreen.class);
-                    intent.putExtra("account_info", accountInfo);
-                    intent.putExtra("myuninum", uninumber);
-                    intent.putExtra("myregnum", regnum);
+                    intent.putExtra("account_info", accountInfo); // 구매하기 화면에 계정 정보 보내줌
+                    intent.putExtra("myuninum", uninumber); // 구매하기 화면에  Uninumber 보내줌
+                    intent.putExtra("myregnum", regnum); // 구매하기 화면에 RegisterNumber 보내줌
                     startActivity(intent);
                     finish();
                 }
             }
         });
 
-        ImageButton backButton = findViewById(R.id.back_button); // 뒤로가기 버튼 계정 선택 화면으로 이동
+        backButton = findViewById(R.id.back_button); // 뒤로가기 버튼 계정 선택 화면으로 이동
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,8 +133,8 @@ public class AuctionScreen extends AppCompatActivity {
         });
 
         //판매중, 내 아이템 이동버튼 구현
-        moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼 정의
-        moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼 정의
+        moveSellingButton = (Button)findViewById(R.id.moveSellingButton); // 판매중인 아이템으로 이동버튼 생성
+        moveMyitemButton = (Button)findViewById(R.id.moveMyitemButton); // 내 아이템으로 이동버튼 생성
 
         moveSellingButton.setOnClickListener(new View.OnClickListener(){ // 판매중인 아이템으로 이동
             @Override

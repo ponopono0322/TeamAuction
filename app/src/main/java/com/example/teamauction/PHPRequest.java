@@ -10,7 +10,6 @@ import java.util.Map;
 public class PHPRequest extends StringRequest {
 
     private Map<String, String> map;
-    private Map<String, Integer> map2;
 
     // 계정 추가
     public PHPRequest(String URL, String userID, String userPW, String gameName,
@@ -72,17 +71,15 @@ public class PHPRequest extends StringRequest {
         map = new HashMap<>();
     }
 
-    // 경매장 리스트, 판매중인, 내아이템
-    public PHPRequest(String URL, String GameName,String ItemName,Integer ItemQuantity,Integer ItemPrice,String GameID, String GameNickname,Response.Listener<String> listener ){
+
+    // 구매하기 기능
+    public PHPRequest(String URL, String GameName,String RegisterNumber,String ItemQuantity, String  Buyer,Response.Listener<String> listener ){
         super(Method.POST, URL, listener,null);
         map = new HashMap<>();
-        map2 = new HashMap<>();
-        map.put("GameName",GameName);
-        map.put("ItemName",ItemName);
-        map2.put("ItemQuantity",ItemQuantity);
-        map2.put("ItemPrice",ItemPrice);
-        map.put("GameID",GameID);
-        map.put("GameNickname",GameNickname);
+        map.put("gameName", GameName);
+        map.put("RegisterNumber", RegisterNumber);
+        map.put("Quantity",ItemQuantity);
+        map.put("Buyer", Buyer);
     }
 
     //public PHPRequest(String URL, String )

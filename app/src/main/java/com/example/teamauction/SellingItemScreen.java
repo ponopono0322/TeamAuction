@@ -32,16 +32,14 @@ public class SellingItemScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_item_selling);
 
-        //ListView listview ;
-        ListViewAdapter adapter;
-
-        Intent account_info = getIntent();
+        ListViewAdapter adapter; // 어뎁터 선언
+        Intent account_info = getIntent(); // 로그인 계정 정보 받기
         accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
-        String myGameName =accountInfo.getGameName();
-        String myCharName =accountInfo.getCharacterName();
+        String myGameName =accountInfo.getGameName(); // 게임 이름 정보 가져오기
+        String myCharName =accountInfo.getCharacterName(); // 게임 캐릭터 닉네임 정보 가져오기
 
-        UserCharName = findViewById(R.id.MyUserCharName);
-        UserCharName.setText(myCharName);
+        UserCharName = findViewById(R.id.MyUserCharName); //유저 닉네임 들어갈 공간 생성
+        UserCharName.setText(myCharName); //로그인한 계정 캐릭터 이름으로 변경
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -107,7 +105,7 @@ public class SellingItemScreen extends AppCompatActivity {
         queue1.add(validateRequest1);
 
 
-        ImageButton backButton = findViewById(R.id.back_auctionScreen2); // 뒤로가기 버튼 경매장 화면으로 이동
+        backButton = findViewById(R.id.back_auctionScreen2); // 뒤로가기 버튼 경매장 화면으로 이동
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,36 +116,34 @@ public class SellingItemScreen extends AppCompatActivity {
             }
         });
 
-        //리스트 뷰에 있는 아이템 터치시 DeleteScreen popup창 띄우기
+        //리스트 뷰에 있는 아이템을 터치하고 판매하기 버튼을 누르면 DeleteScreen창 띄우기
         Button dropingbutton = findViewById(R.id.dropButton);
         dropingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    //String ItemCode = item.getText();
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
                     Intent intent = new Intent(SellingItemScreen.this, DeleteScreen.class);
-                    //intent.putExtra("data", ItemCode);
+                    intent.putExtra("account_info", accountInfo);
                     startActivity(intent);
-                    //finish();
+                    finish();
                 }
             }
         });
 
-        //리스트 뷰에 있는 아이템 터치시 FixScreen popup창 띄우기
+        //리스트 뷰에 있는 아이템을 터치하고 판매하기 버튼을 누르면 FixScreen창 띄우기
         Button fixingbutton = findViewById(R.id.fixButton);
         fixingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int pos = listview.getCheckedItemPosition();
                 if (pos > -1) {
-                    //ListViewItem item = (ListViewItem) adapter.getItem(pos);
-                    //String ItemCode = item.getText();
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
                     Intent intent = new Intent(SellingItemScreen.this, FixScreen.class);
-                    //intent.putExtra("data", ItemCode);
+                    intent.putExtra("account_info", accountInfo);
                     startActivity(intent);
-                    //finish();
+                    finish();
                 }
             }
         });
