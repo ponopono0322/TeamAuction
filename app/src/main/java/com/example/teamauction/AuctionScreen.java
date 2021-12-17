@@ -88,6 +88,28 @@ public class AuctionScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(AuctionScreen.this);
         queue.add(validateRequest);
 
+        Response.Listener<String> responseListener1 = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("Money");
+
+                    JSONObject item = games.getJSONObject(0);
+                    String Money1 = item.getString("gameMoney");
+                    //DB에서 받아온 내 돈으로 변경
+
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl1 = "http://ualsgur98.dothome.co.kr/Money.php";
+        PHPRequest validateRequest1 = new PHPRequest( purl1, myGameName,myCharName,responseListener1);
+        RequestQueue queue1 = Volley.newRequestQueue(AuctionScreen.this);
+        queue1.add(validateRequest1);
 
         //EditText(검색창)에 검색된 값을 받아 함수를 호출
         EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter) ;

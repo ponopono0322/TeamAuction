@@ -12,6 +12,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class BuyingScreen extends AppCompatActivity {
     private TextView buyCostBox;
     private EditText editTextquantity;
@@ -32,13 +40,45 @@ public class BuyingScreen extends AppCompatActivity {
         String Uninum = intent.getExtras().getString("myuninum");
         String Regnum = intent.getExtras().getString("myregnum");
 
+        Intent account_info = getIntent();
+        accountInfo = (GameAccountInfo) account_info.getSerializableExtra("account_info");
+        String myGameName =accountInfo.getGameName();
 
         ItemName = findViewById(R.id.buyingItemName);
-        ItemName.setText(myCharName);
         ItemInfo = findViewById(R.id.buyingItemInfo);
-        ItemInfo.setText(myCharName);
-        ItemPrice = findViewById(R.id.BuyingItemPrice);
-        ItemPrice.setText(myCharName);
+
+      /*  ItemPrice = findViewById(R.id.BuyingItemPrice);
+        ItemPrice.setText();*/
+
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray games = jsonResponse.getJSONArray("BuyItemInfo");
+
+                    for (int i = 0; i < games.length(); i++) {
+                        JSONObject item = games.getJSONObject(i);
+                      //  String UniNum1 = item.getString("UniNum");
+                        String ItemName = item.getString("ItemName");
+                        String ItemInfo = item.getString("ItemInfo");
+
+                      /*adapter.addAuctionItem(ContextCompat.getDrawable(BuyingScreen.this,
+                              R.drawable.ic_baseline_account_box_24),ItemName,ItemInfo);*/
+                    }
+                    //  adapter.notifyDataSetChanged();
+                } catch (JSONException e) { // 접속 오류가 난 것이라면
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "no connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        String purl = "http://ualsgur98.dothome.co.kr/BuyItemInfo.php";
+        PHPRequest validateRequest = new PHPRequest( purl, myGameName,responseListener);
+        RequestQueue queue = Volley.newRequestQueue(BuyingScreen.this);
+        queue.add(validateRequest);
+
+
 
 
         //UI 객체생성

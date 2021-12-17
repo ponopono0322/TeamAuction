@@ -82,8 +82,6 @@ public class ItemCheckScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(ItemCheckScreen.this);
         queue.add(validateRequest);
 
-
-
         Response.Listener<String> responseListener1 = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
