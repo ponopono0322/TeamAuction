@@ -116,7 +116,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/FixItemName"
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:text="아이템명"
@@ -126,7 +126,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textview32"
+                android:id="@+id/FixItemInfo"
                 android:layout_width="match_parent"
                 android:layout_height="135dp"
                 android:text="아이템 고유정보"
