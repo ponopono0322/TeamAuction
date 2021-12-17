@@ -14,7 +14,6 @@ import java.util.Map;
 public class PHPRequest extends StringRequest {
 
     private Map<String, String> map;
-    private Map<String, Integer> map2;
 
     // 계정 추가
     public PHPRequest(String URL, String userID, String userPW, String gameName,
@@ -52,7 +51,7 @@ public class PHPRequest extends StringRequest {
         map.put("gamePW", gamePW);       // 게임 비밀번호 추가
     }
 
-    // 로그인
+    // 로그인,판매중인, 내아이템
     public PHPRequest(String URL, String userID, String userPW, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
@@ -76,17 +75,15 @@ public class PHPRequest extends StringRequest {
         map = new HashMap<>();      // 해시맵 생성
     }
 
-    // 경매장 리스트, 판매중인, 내아이템
-    public PHPRequest(String URL, String GameName,String ItemName,Integer ItemQuantity,Integer ItemPrice,String GameID, String GameNickname,Response.Listener<String> listener ){
+
+    // 구매하기 기능
+    public PHPRequest(String URL, String GameName,String RegisterNumber,String ItemQuantity, String  Buyer,Response.Listener<String> listener ){
         super(Method.POST, URL, listener,null);
-        map = new HashMap<>();
-        map2 = new HashMap<>();
-        map.put("GameName",GameName);
-        map.put("ItemName",ItemName);
-        map2.put("ItemQuantity",ItemQuantity);
-        map2.put("ItemPrice",ItemPrice);
-        map.put("GameID",GameID);
-        map.put("GameNickname",GameNickname);
+        map = new HashMap<>();  // 해시맵 생성
+        map.put("gameName", GameName); // 게임 닉네임 추가
+        map.put("RegisterNumber", RegisterNumber); // RegisterNumber 추가
+        map.put("Quantity",ItemQuantity); // 수량 추가
+        map.put("Buyer", Buyer); // 구매자 추가
     }
 
     //public PHPRequest(String URL, String )
