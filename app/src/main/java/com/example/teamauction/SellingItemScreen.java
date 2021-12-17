@@ -61,10 +61,11 @@ public class SellingItemScreen extends AppCompatActivity {
                         String RegisterNumber = item.getString("RegisterNumber");
                         String ItemName = item.getString("ItemName");
                         String Price = item.getString("ItemPrice");
-                        String Quantity = item.getString("Quantity");
+                        //String Quantity = item.getString("Quantity");
+                        String Uniumber = item.getString("UniNum");
 
                         adapter.addAuctionItem(ContextCompat.getDrawable(SellingItemScreen.this,
-                                R.drawable.ic_baseline_account_box_24),ItemName,Price,Quantity,RegisterNumber );
+                                R.drawable.ic_baseline_account_box_24),ItemName,Price,Uniumber,RegisterNumber );
                     }
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) { // 접속 오류가 난 것이라면

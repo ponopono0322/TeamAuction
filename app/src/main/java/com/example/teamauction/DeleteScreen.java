@@ -18,7 +18,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DeleteScreen extends AppCompatActivity {
-    private EditText editTextcost, editTextquantity;
     private GameAccountInfo accountInfo;
     private TextView ItemName, ItemInfo, ItemPrice;
     Button yes_btn, no_btn;

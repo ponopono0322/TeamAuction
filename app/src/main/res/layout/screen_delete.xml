@@ -25,11 +25,66 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/BuyingItemPrice"
+            android:layout_width="62dp"
+            android:layout_height="44dp"
+            android:text="가격"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textIsSelectable="false"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/buyCostBox"
+            android:layout_width="134dp"
+            android:layout_height="49dp"
+            android:backgroundTint="@color/black"
+            android:ems="10"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="62dp"
+            android:layout_height="44dp"
+            android:text="수량"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textIsSelectable="false"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/buyQuantityBox"
+            android:layout_width="134dp"
+            android:layout_height="49dp"
+            android:backgroundTint="@color/black"
+            android:ems="10" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
         tools:layout_editor_absoluteX="0dp">
 
         <Button

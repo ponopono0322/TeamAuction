@@ -60,9 +60,10 @@ public class ItemCheckScreen extends AppCompatActivity {
                         String UniNum = item.getString("UniNum");
                         String ItemName = item.getString("ItemName");
                         String ItemQuantity = item.getString("ItemQuantity");
-                        String Money = item.getString("Money");
+                        //String Money = item.getString("Money");
+                        String Regnum = item.getString("RegisterNumber");
                         adapter.addAuctionItem(ContextCompat.getDrawable(ItemCheckScreen.this,
-                                R.drawable.ic_baseline_account_box_24),ItemName,ItemQuantity,Money,UniNum);
+                                R.drawable.ic_baseline_account_box_24),ItemName, ItemQuantity, UniNum,Regnum);
                     }
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
