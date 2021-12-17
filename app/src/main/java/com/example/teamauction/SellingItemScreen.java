@@ -25,14 +25,14 @@ import org.w3c.dom.Text;
 /**
  * 판매중인 아이템 화면
  * 경매장 화면에서 판매중인 아이템 버튼을 클릭한 뒤 화면
- * 판매중인 아이템중 삭제, 수정을 할 수 있게 하는 액티비티
+ * 판매중인 아이템중 삭제, 수정을 할 아이템을 선택 할 수 있게 하는 액티비티
  */
 
 public class SellingItemScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo; // 계정 정보에 대한 객체
-    private TextView UserCharName; // 유저 게임 닉네임 텍스트뷰 정의
-    private ImageButton backButton; // 뒤로가기 버튼 정의
-    private TextView money; // 유저 게임 돈 텍스트뷰 정의
+    private TextView UserCharName; // 유저 게임 닉네임 텍스트뷰
+    private ImageButton backButton; // 뒤로가기 버튼
+    private TextView money; // 유저 게임 돈 텍스트뷰
 
     ListView listview = null;
     @Override
@@ -60,7 +60,7 @@ public class SellingItemScreen extends AppCompatActivity {
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) { // onResponse 함수 재정의
-                try { // 만약 반응이 왔고 정상적이라면,
+                try { // 만약 반응이 왔고 정상적이라면
                     JSONObject jsonResponse = new JSONObject(response); // json 형태로 받기 위해 객체 준비
                     JSONArray games = jsonResponse.getJSONArray("Selling"); // Selling 값으로 배열을 받음
                     for (int i = 0; i < games.length(); i++) { // games의 길이만큼 반복문 수행
@@ -72,7 +72,7 @@ public class SellingItemScreen extends AppCompatActivity {
                         adapter.addAuctionItem(ContextCompat.getDrawable(SellingItemScreen.this,
                                 R.drawable.ic_baseline_account_box_24),ItemName,Price,Uniumber,RegisterNumber );  //리스트뷰에 있는 아이템의 이름, 가격, UniNumber, RegisterNumber 정보 저장
                     }
-                    adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged(); // 반복문 수행 후에 리스트가 업데이트 됨을 알림
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
                     e.printStackTrace(); // 오류 추적
                     // 토스트 메세지를 띄워줌
@@ -89,8 +89,8 @@ public class SellingItemScreen extends AppCompatActivity {
         //내 돈 띄워주기 구현
        Response.Listener<String> responseListener1 = new Response.Listener<String>() {
             @Override
-            public void onResponse(String response) {
-                try {
+            public void onResponse(String response) { // onResponse 함수 재정의
+                try { // 만약 반응이 왔고 정상적이라면
                     JSONObject jsonResponse = new JSONObject(response); // json 형태로 받기 위해 객체 준비
                     JSONArray games = jsonResponse.getJSONArray("Money"); // Money 값으로 배열을 받음
                     JSONObject item = games.getJSONObject(0);  // games의 데이터를 가져옴
@@ -98,8 +98,7 @@ public class SellingItemScreen extends AppCompatActivity {
                     //DB에서 받아온 내 돈으로 변경
                     money = findViewById(R.id.myMoneyBox); //돈이 들어갈 공간 생성
                     money.setText(Money1); //유저의 돈으로 변경
-
-                    adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged(); // 반복문 수행 후에 리스트가 업데이트 됨을 알림
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
                     e.printStackTrace();  // 오류 추적
                     // 토스트 메세지를 띄워줌
@@ -117,24 +116,26 @@ public class SellingItemScreen extends AppCompatActivity {
         backButton = findViewById(R.id.back_auctionScreen2); // 뒤로가기 버튼 경매장 화면으로 이동
         backButton.setOnClickListener(new View.OnClickListener() { //뒤로가기 버튼 클릭 이벤트 생성
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { // onClick 함수 재정의
+                // SellingScreen에서 AuctionScreen으로 가는 intent 준비
                 Intent intent = new Intent(SellingItemScreen.this, AuctionScreen.class);
-                intent.putExtra("account_info", accountInfo);
-                startActivity(intent);
+                intent.putExtra("account_info", accountInfo); // 경매장 화면에 계정 정보 보내줌
+                startActivity(intent); // AuctionScreen 실행
                 finish(); // 현재 엑티비티 종료
             }
         });
 
         //리스트 뷰에 있는 아이템을 터치하고 판매하기 버튼을 누르면 DeleteScreen창 띄우기
         Button dropingbutton = findViewById(R.id.dropButton);
-        dropingbutton.setOnClickListener(new View.OnClickListener() {
+        dropingbutton.setOnClickListener(new View.OnClickListener() { // 구매하기 버튼 클릭 이벤트 생성
             @Override
-            public void onClick(View view) {
-                int pos = listview.getCheckedItemPosition();
-                if (pos > -1) {
-                    ListViewItem item = (ListViewItem) adapter.getItem(pos);
+            public void onClick(View view) { // onClick 함수 재정의
+                int pos = listview.getCheckedItemPosition(); // 리스트뷰 위치데이터 변수
+                if (pos > -1) { // pos는 0이상이므로 그 이상일 때만 작동
+                    ListViewItem item = (ListViewItem) adapter.getItem(pos); //터치한 아이템의 위치값 받아옴
                     String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
                     String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
+                    // SellingItemScreen에서 DeleteScreen으로 가는 intent 준비
                     Intent intent = new Intent(SellingItemScreen.this, DeleteScreen.class);
                     intent.putExtra("account_info", accountInfo); // 판매하기 화면에 계정 정보 보내줌
                     intent.putExtra("myuninum", uninumber); // 판매하기 화면에  Uninumber 보내줌
@@ -147,7 +148,7 @@ public class SellingItemScreen extends AppCompatActivity {
 
         //리스트 뷰에 있는 아이템을 터치하고 판매하기 버튼을 누르면 FixScreen창 띄우기
         Button fixingbutton = findViewById(R.id.fixButton);
-        fixingbutton.setOnClickListener(new View.OnClickListener() {
+        fixingbutton.setOnClickListener(new View.OnClickListener() { // 구매하기 버튼 클릭 이벤트 생성
             @Override
             public void onClick(View view) { // onClick 함수 재정의
                 int pos = listview.getCheckedItemPosition(); // 리스트뷰 위치데이터 변수
@@ -155,6 +156,7 @@ public class SellingItemScreen extends AppCompatActivity {
                     ListViewItem item = (ListViewItem) adapter.getItem(pos); //터치한 아이템의 위치값 받아옴
                     String uninumber = item.getUninumber(); //아이템의 Uninumber 받아옴
                     String regnum = item.getRegnumber(); //아이템의 RegisterNumber 받아옴
+                    // SellingItemScreen에서 FixScreen으로 가는 intent 준비
                     Intent intent = new Intent(SellingItemScreen.this, FixScreen.class);
                     intent.putExtra("account_info", accountInfo); // 삭제하기 화면에 계정 정보 보내줌
                     intent.putExtra("myuninum", uninumber); // 삭제하기 화면에  Uninumber 보내줌

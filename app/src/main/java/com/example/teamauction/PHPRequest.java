@@ -79,11 +79,11 @@ public class PHPRequest extends StringRequest {
     // 구매하기 기능
     public PHPRequest(String URL, String GameName,String RegisterNumber,String ItemQuantity, String  Buyer,Response.Listener<String> listener ){
         super(Method.POST, URL, listener,null);
-        map = new HashMap<>();
-        map.put("gameName", GameName);
-        map.put("RegisterNumber", RegisterNumber);
-        map.put("Quantity",ItemQuantity);
-        map.put("Buyer", Buyer);
+        map = new HashMap<>();  // 해시맵 생성
+        map.put("gameName", GameName); // 게임 닉네임 추가
+        map.put("RegisterNumber", RegisterNumber); // RegisterNumber 추가
+        map.put("Quantity",ItemQuantity); // 수량 추가
+        map.put("Buyer", Buyer); // 구매자 추가
     }
 
     //public PHPRequest(String URL, String )
