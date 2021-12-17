@@ -14,7 +14,10 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-// 리사이클러뷰 보여주는 클래스
+/**
+ * 리사이클러뷰를 보여주는 클래스
+ * 리스트를 구성하는 요소와 보여주는 요소를 지정할 수 있음
+ */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private ArrayList<ListViewItem> mData = null;
@@ -36,34 +39,35 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
     public class ViewHolder extends RecyclerView.ViewHolder {
         // ImageView icon;
-        TextView title, desc;
-        CheckBox checkBox;
-        ImageButton deleteBox;
+        TextView title, desc;       // 텍스트뷰들
+        CheckBox checkBox;          // 체크박스
+        ImageButton deleteBox;      // 삭제버튼
 
         ViewHolder(View itemView) {
             super(itemView);
 
             // 뷰 객체에 대한 참조. (hold strong reference)
             // icon = itemView.findViewById(R.id.icon);
-            title = itemView.findViewById(R.id.title);
-            desc = itemView.findViewById(R.id.desc);
-            checkBox = itemView.findViewById(R.id.select_account);
-            deleteBox = itemView.findViewById(R.id.deletbox);
+            title = itemView.findViewById(R.id.title);              // 텍스트뷰1
+            desc = itemView.findViewById(R.id.desc);                // 텍스트뷰2
+            checkBox = itemView.findViewById(R.id.select_account);  // 체크박스
+            deleteBox = itemView.findViewById(R.id.deletbox);       // 삭제버튼
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {    // 아이템 뷰 클릭 이벤트 생성
                 @Override
-                public void onClick(View view) {
-                    int pos = getAdapterPosition();
-                    if (pos != RecyclerView.NO_POSITION) {
-                        if (mListener!=null) { mListener.onItemClick(view, pos); }
+                public void onClick(View view) {        // onClick 함수 재정의
+                    int pos = getAdapterPosition();     // 현재 위치 받음
+                    if (pos != RecyclerView.NO_POSITION) {  // 리사이클러뷰 내의 위치라면
+                        if (mListener!=null) { mListener.onItemClick(view, pos); }  // 이벤트 받음
                     }
                 }
             });
-            deleteBox.setOnClickListener(new View.OnClickListener() {
+            deleteBox.setOnClickListener(new View.OnClickListener() {   // 삭제 버튼 클릭 이벤트 생성
                 @Override
-                public void onClick(View view) {
+                public void onClick(View view) {        // onClick 함수 재정의
+                    // 알림창 생성
                     AlertDialog.Builder oDialog = new AlertDialog.Builder(view.getContext());
-
+                    // 알림창 구성
                     oDialog.setMessage("정말로 계정을 삭제하시겠어요?")
                             .setTitle("계정 삭제 알림")
                             .setPositiveButton("아니오", new DialogInterface.OnClickListener() {
@@ -79,7 +83,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                                 }
                             })
                             .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
-                            .show();
+                            .show();              // 알림창 띄우기
 
                 }
             });
@@ -94,7 +98,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        Context context = parent.getContext();      // 부모 객체 받음
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = inflater.inflate(R.layout.recyclerview_item, parent, false);

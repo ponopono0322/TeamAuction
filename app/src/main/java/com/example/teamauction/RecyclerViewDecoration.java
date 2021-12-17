@@ -5,10 +5,13 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-// 리사이클러뷰 간격에 관련된 클래스
+/**
+ * 리사이클러뷰 간격에 관련된 클래스
+ */
+
 public class RecyclerViewDecoration extends RecyclerView.ItemDecoration {
 
-    private final int divHeight;
+    private final int divHeight;        // 아이템 간의 간격
 
     public RecyclerViewDecoration(int divHeight) {
         this.divHeight = divHeight;
@@ -16,8 +19,8 @@ public class RecyclerViewDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
-        super.getItemOffsets(outRect, view, parent, state);
-        if (parent.getChildAdapterPosition(view) != parent.getAdapter().getItemCount() - 1){
+        super.getItemOffsets(outRect, view, parent, state);     // 부모 상속
+        if (parent.getChildAdapterPosition(view) != parent.getAdapter().getItemCount() - 1){    // 가장 위는 빼고
             outRect.bottom = divHeight;
         }
     }

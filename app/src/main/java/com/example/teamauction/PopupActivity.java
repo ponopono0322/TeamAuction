@@ -11,11 +11,15 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * 팝업창을 구성하는 엑티비티형 dialog
+ * 원하는 항목을 집어넣고 원하는 결과를 유도할 수 있다
+ */
 public class PopupActivity extends Activity {
 
-    TextView txtText;
-    Button yes_btn, no_btn;
-    int request_num_yes, request_num_no;
+    TextView txtText;                   // 어떤 알림인지 알려주기 위한 텍스트 뷰
+    Button yes_btn, no_btn;             // 확인, 취소 버튼
+    int request_num_yes, request_num_no;// 보내줄 intent 값
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,23 +39,23 @@ public class PopupActivity extends Activity {
         txtText.setText(data);
 
         if(data.equals(getString(R.string.wanttologout))) {
-            request_num_yes = 1;
-            request_num_no = 0;
+            request_num_yes = 1;    // 로그아웃할 때
+            request_num_no = 0;     // 로그아웃 취소할 때
         }
         else if(data.equals(getString(R.string.access_account))) {
-            request_num_yes = 3;
-            request_num_no = 2;
+            request_num_yes = 3;    // 로그인 할 때
+            request_num_no = 2;     // 로그인 취소할 때
         }
 
-        yes_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
+        yes_btn.setOnClickListener(new View.OnClickListener() { // 이벤트 생성
+            @Override   // onClick 재정의 해서 함수 실행
             public void onClick(View view) {
                 mOnClose(request_num_yes);
             }
         });
 
-        no_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
+        no_btn.setOnClickListener(new View.OnClickListener() {  // 이벤트 생성
+            @Override   // onClick 재정의 해서 함수 실행
             public void onClick(View view) {
                 mOnClose(request_num_no);
             }
