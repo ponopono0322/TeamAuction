@@ -27,7 +27,11 @@ public class AuctionScreenTest {
             Intent intent = new Intent();
             GameAccountInfo gameAccountInfo = new GameAccountInfo();
             gameAccountInfo.setLoginID("1");
-            gameAccountInfo.setGameName("Maple");
+            gameAccountInfo.setLoginPW("1");
+            gameAccountInfo.setGameName("MapleStory");
+            gameAccountInfo.setCharacterName("1");
+            gameAccountInfo.setGamePublisherID("1");
+            gameAccountInfo.setGamePublisherPW("1");
             intent.putExtra("account_info", gameAccountInfo);
             return intent;
         }
@@ -35,19 +39,19 @@ public class AuctionScreenTest {
 
     @Test
     public void GoBack() {
-        // 메인 엑티비티로 이동 하는지
+        // 메인 엑티비티로 이동 하는지. 정상적으로 작동
         Espresso.onView(withId(R.id.back_button)).perform(click()).check(doesNotExist());
     }
 
     @Test
     public void ListCheck1() {
-        // 첫번째 항목을 선택하는 것이 잘 되는지
+        // 첫번째 항목을 선택하는 것이 잘 되는지. 정상적으로 작동
         onData(anything()).inAdapterView(withId(R.id.auctionList)).atPosition(0).perform(click());
     }
 
     @Test
     public void ListCheck2() {
-        // 두번째 항목을 선택하는 것이 잘 되는지
+        // 두번째 항목을 선택하는 것이 잘 되는지. 정상적으로 작동
         onData(anything()).inAdapterView(withId(R.id.auctionList)).atPosition(1).perform(click());
     }
 

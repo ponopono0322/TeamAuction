@@ -26,10 +26,22 @@ public class BuyingScreenTest {
         protected Intent getActivityIntent() {
             Intent intent = new Intent();
             GameAccountInfo gameAccountInfo = new GameAccountInfo();
-            gameAccountInfo.setLoginID("1");
-            gameAccountInfo.setGameName("Maple");
+            gameAccountInfo.setCharacterName("1");
+            gameAccountInfo.setGameName("MapleStory");
             intent.putExtra("account_info", gameAccountInfo);
             return intent;
         }
     };
+
+    @Test
+    public void QuantityBox() {
+        // 에디트텍스트에 값을 입력. 정상적으로 작동
+        Espresso.onView(withId(R.id.buyQuantityBox)).perform(typeText("123"), closeSoftKeyboard());
+    }
+
+    @Test
+    public void Cancel() {
+        // 토스트 메세지를 뜨고 경매장 화면으로 잘 이동하는지. 정상적으로 작동
+        Espresso.onView(withId(R.id.buy_check_no)).perform(click()).check(doesNotExist());
+    }
 }
