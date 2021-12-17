@@ -67,7 +67,7 @@ public class SellingScreen extends AppCompatActivity {
                 }
             }
         };
-        String purl = "http://ualsgur98.dothome.co.kr/.php";
+        String purl = "http://ualsgur98.dothome.co.kr/SellItemInfo.php";
         PHPRequest validateRequest = new PHPRequest(purl, myGameName, Uninum, responseListener);
         RequestQueue queue = Volley.newRequestQueue(SellingScreen.this);
         queue.add(validateRequest);
