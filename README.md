@@ -45,18 +45,18 @@
 
 ## 3. [Test](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)
 - *테스트 파일 위치는 [이곳](./app/src/androidTest/java/com/example/teamauction)과 [이곳](./app/src/test/java/com/example/teamauction)에서 확인할 수 있습니다*
-- *수행한 테스트 정의는 [이곳](https://github.com/ponopono0322/TeamAuction/wiki/TestCase)에서 확인할 수 있습니다*
+- *클래스 이름을 누르면 해당 테스트의 정의로 넘어갑니다*
 
 |클래스 이름|실행결과|클래스 이름|실행결과|
 |:------:|:----:|:------:|:----:|
-|[MainStartActivityTest](./app/src/androidTest/java/com/example/teamauction/MainStartActivityTest.java)|[.pdf](./design/test/MainStartActivityTest.pdf) [.html](./design/test/MainStartActivityTest.html)|[GameAccountInfoTest](./app/src/test/java/com/example/teamauction/GameAccountInfoTest.java)|[.pdf](./design/test/GameAccountInfoTest.pdf) [.html](./design/test/GameAccountInfoTest.html)|
-|[MainLoginActivityTest](./app/src/androidTest/java/com/example/teamauction/MainLoginActivityTest.java)|[.pdf](./design/test/MainLoginActivityTest.pdf) [.html](./design/test/MainLoginActivityTest.html)|[ListViewItemTest](./app/src/test/java/com/example/teamauction/ListViewItemTest.java)|[.pdf](./design/test/ListViewItemTest.pdf) [.html](./design/test/ListViewItemTest.html)|||
-|[MainSignupActivityTest](./app/src/androidTest/java/com/example/teamauction/MainSignupActivityTest.java)|[.pdf](./design/test/MainSignupActivityTest.pdf) [.html](./design/test/MainSignupActivityTest.html)|||
-|[MainPasswordActivityTest](./app/src/androidTest/java/com/example/teamauction/MainPasswordActivityTest.java)|[.pdf](./design/test/MainPasswordActivityTest.pdf) [.html](./design/test/MainPasswordActivityTest.html)|||
-|[MainActivityTest](./app/src/androidTest/java/com/example/teamauction/MainActivityTest.java)|[.pdf](./design/test/MainActivityTest.pdf) [.html](./design/test/MainActivityTest.html)|||
-|[GameListActivityTest](./app/src/androidTest/java/com/example/teamauction/GameListActivityTest.java)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|||
-|[GameLoginActivityTest](./app/src/androidTest/java/com/example/teamauction/GameLoginActivityTest.java)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|||
-|[GameChActivityTest](./app/src/androidTest/java/com/example/teamauction/GameChActivityTest.java)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
+|[MainStartActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainstartactivitytest)|[.pdf](./design/test/MainStartActivityTest.pdf) [.html](./design/test/MainStartActivityTest.html)|[GameAccountInfoTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameaccountinfotest)|[.pdf](./design/test/GameAccountInfoTest.pdf) [.html](./design/test/GameAccountInfoTest.html)|
+|[MainLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainloginactivitytest)|[.pdf](./design/test/MainLoginActivityTest.pdf) [.html](./design/test/MainLoginActivityTest.html)|[ListViewItemTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#listviewitemtest)|[.pdf](./design/test/ListViewItemTest.pdf) [.html](./design/test/ListViewItemTest.html)|||
+|[MainSignupActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainsignupactivitytest)|[.pdf](./design/test/MainSignupActivityTest.pdf) [.html](./design/test/MainSignupActivityTest.html)|||
+|[MainPasswordActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainpasswordactivitytest)|[.pdf](./design/test/MainPasswordActivityTest.pdf) [.html](./design/test/MainPasswordActivityTest.html)|||
+|[MainActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#mainactivitytest)|[.pdf](./design/test/MainActivityTest.pdf) [.html](./design/test/MainActivityTest.html)|||
+|[GameListActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamelistactivitytest)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|||
+|[GameLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameloginactivitytest)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|||
+|[GameChActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamechactivitytest)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|||
 
 ## 4. [Algorithm](https://github.com/ponopono0322/TeamAuction/wiki/Plan#project-algorithm)
 
