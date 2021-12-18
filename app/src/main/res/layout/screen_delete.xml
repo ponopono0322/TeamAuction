@@ -76,7 +76,8 @@
             android:layout_width="134dp"
             android:layout_height="49dp"
             android:backgroundTint="@color/black"
-            android:ems="10" />
+            android:ems="10"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout

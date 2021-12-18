@@ -95,7 +95,7 @@ public class FixScreen extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response); // json 형태로 받기 위해 객체 준비
                             boolean success = jsonResponse.getBoolean("success");  // success라는 key 값으로 boolean value를 받음
                             if (success) {// success가 참이라면
-
+                                Toast.makeText(getApplicationContext(), "수정하였습니다.", Toast.LENGTH_SHORT).show();
                             } else { // success가 false일 때
                                 // 토스트 메세지를 띄워줌
                                 Toast.makeText(getApplicationContext(), "서버와 연결이 끊겼습니다", Toast.LENGTH_SHORT).show();
@@ -108,9 +108,9 @@ public class FixScreen extends AppCompatActivity {
                         }
                     }
                 };
-                String purl3 = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+                String purl3 = "http://ualsgur98.dothome.co.kr/fix.php"; //통신할 php 주소
                 // 데이터 전송을 위한 데이터 세팅
-                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, get_textcost, get_textquan, myCharName, responseListener3);
+                PHPRequest validateRequest3 = new PHPRequest(purl3, Regnum, myGameName, myCharName, get_textcost, get_textquan, responseListener3);
                 RequestQueue queue3 = Volley.newRequestQueue(FixScreen.this); // 큐를 생성
                 queue3.add(validateRequest3); // 큐에 추가
 

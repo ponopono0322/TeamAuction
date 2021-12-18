@@ -30,7 +30,8 @@
             android:layout_height="49dp"
             android:backgroundTint="@color/black"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
