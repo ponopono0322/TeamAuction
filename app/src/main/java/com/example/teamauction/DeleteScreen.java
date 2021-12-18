@@ -121,7 +121,7 @@ public class DeleteScreen extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response); // json 형태로 받기 위해 객체 준비
                             boolean success = jsonResponse.getBoolean("success");  // success라는 key 값으로 boolean value를 받음
                             if (success) {  // success가 참이라면
-
+                                Toast.makeText(getApplicationContext(), "삭제하였습니다.", Toast.LENGTH_SHORT).show();
                             }
                             else { // success가 false일 때
                                 // 토스트 메세지를 띄워줌
@@ -135,9 +135,9 @@ public class DeleteScreen extends AppCompatActivity {
                         }
                     }
                 };
-                String purl3 = "http://ualsgur98.dothome.co.kr/.php"; // 통신할 php 주소
+                String purl3 = "http://ualsgur98.dothome.co.kr/Delete.php"; // 통신할 php 주소
                 // 데이터 전송을 위한 데이터 세팅
-                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, myCharName, responseListener3);
+                PHPRequest validateRequest3 = new PHPRequest(purl3, Regnum, myGameName, myCharName, responseListener3);
                 RequestQueue queue3 = Volley.newRequestQueue(DeleteScreen.this); // 큐를 생성
                 queue3.add(validateRequest3);  // 큐에 추가
                 // 토스트 메세지를 띄워줌

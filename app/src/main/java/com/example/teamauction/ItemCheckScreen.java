@@ -63,12 +63,11 @@ public class ItemCheckScreen extends AppCompatActivity {
                     JSONArray games = jsonResponse.getJSONArray("UserInfo"); // Selling 값으로 배열을 받음
                     for (int i = 0; i < games.length(); i++) { // games의 길이만큼 반복문 수행
                         JSONObject item = games.getJSONObject(i); // games의 데이터를 가져옴
-                        String Regnum = item.getString("RegisterNumber"); //RegisterNumber 데이터 저장
                         String UniNum = item.getString("UniNum");  // UniNum 데이터 저장
                         String ItemName = item.getString("ItemName"); // ItemName 데이터 저장
                         String ItemQuantity = item.getString("ItemQuantity"); // ItemQuantity 데이터 저장
                         adapter.addAuctionItem(ContextCompat.getDrawable(ItemCheckScreen.this,
-                                R.drawable.ic_baseline_account_box_24),ItemName, ItemQuantity, UniNum,Regnum); //리스트뷰에 있는 아이템의 이름, 가격, UniNumber, RegisterNumber 정보 저장
+                                R.drawable.ic_baseline_account_box_24),ItemName, ItemQuantity, UniNum,""); //리스트뷰에 있는 아이템의 이름, 가격, UniNumber, RegisterNumber 정보 저장
                     }
                     adapter.notifyDataSetChanged(); // 반복문 수행 후에 리스트가 업데이트 됨을 알림
                 } catch (JSONException e) { // 접속 오류가 난 것이라면
@@ -140,7 +139,6 @@ public class ItemCheckScreen extends AppCompatActivity {
                     Intent intent = new Intent(ItemCheckScreen.this, SellingScreen.class);
                     intent.putExtra("account_info", accountInfo); // 구매하기 화면에 계정 정보 보내줌
                     intent.putExtra("myuninum", uninumber); // 구매하기 화면에  Uninumber 보내줌
-                    intent.putExtra("myregnum", regnum); // 구매하기 화면에 RegisterNumber 보내줌
                     startActivity(intent); // SellingScreen 실행
                     finish(); // 현재 엑티비티 종료
                 }
