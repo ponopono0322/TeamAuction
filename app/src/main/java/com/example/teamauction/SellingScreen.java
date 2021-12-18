@@ -39,7 +39,6 @@ public class SellingScreen extends AppCompatActivity {
         String myGameName =accountInfo.getGameName(); // 게임 이름 정보 가져오기
         String myCharName =accountInfo.getCharacterName(); // 게임 캐릭터 닉네임 정보 가져오기
         String Uninum = intent.getExtras().getString("myuninum"); //구매하려는 아이템의 Uninum 받아옴
-        String Regnum = intent.getExtras().getString("myregnum"); //구매하려는 아이템의 Reginum 받아옴
 
         //UI 객체생성
         yes_btn = findViewById(R.id.sell_check_yes);
@@ -111,7 +110,7 @@ public class SellingScreen extends AppCompatActivity {
                 };
                 String purl3 = "http://ualsgur98.dothome.co.kr/Trade.php"; // 통신할 php 주소
                 // 데이터 전송을 위한 데이터 세팅
-                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, myCharName, Regnum, get_textcost, get_textquan, Uninum, responseListener3);
+                PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, myCharName, get_textcost, get_textquan, Uninum, responseListener3);
                 RequestQueue queue3 = Volley.newRequestQueue(SellingScreen.this); // 큐를 생성
                 queue3.add(validateRequest3); // 큐에 추가
 
