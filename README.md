@@ -68,7 +68,7 @@
 |[GameListActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamelistactivitytest)|[.pdf](./design/test/GameListActivityTest.pdf) [.html](./design/test/GameListActivityTest.html)|[DeleteScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#deletescreentest)|[.pdf](./design/test/DeleteScreenTest.pdf) [.html](./design/test/DeleteScreenTest.html)|
 |[GameLoginActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gameloginactivitytest)|[.pdf](./design/test/GameLoginActivityTest.pdf) [.html](./design/test/GameLoginActivityTest.html)|[FixScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#fixscreentest)|[.pdf](./design/test/FixScreenTest.pdf) [.html](./design/test/FixScreenTest.html)|
 |[GameChActivityTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#gamechactivitytest)|[.pdf](./design/test/GameChActivityTest.pdf) [.html](./design/test/GameChActivityTest.html)|[SellingScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#sellingscreentest)|[.pdf](./design/test/SellingScreenTest.pdf) [.html](./design/test/SellingScreenTest.html)|
-|||[ItemCheckScreen](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#ItemCheckScreen)|[.pdf](./design/test/ItemCheckScreen.pdf) [.html](./design/test/ItemCheckScreen.html)|
+|||[ItemCheckScreenTest](https://github.com/ponopono0322/TeamAuction/wiki/TestCase#itemcheckscreentest)|[.pdf](./design/test/ItemCheckScreenTest.pdf) [.html](./design/test/ItemCheckScreenTest.html)|
 
 ## 4. [Algorithm](https://github.com/ponopono0322/TeamAuction/wiki/Plan#project-algorithm)
 
