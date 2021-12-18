@@ -31,7 +31,7 @@ public class BuyingScreen extends AppCompatActivity {
     private GameAccountInfo accountInfo; // 계정 정보에 대한 객체
     private TextView ItemName, ItemInfo, ItemPrice; // 아이템 이름, 정보, 가격이 들어갈 텍스트 뷰
     Button yes_btn, no_btn; // 확인, 취소 버튼
-
+    private String DBItemName; // DB에서 받아온 아이템 이름
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +63,7 @@ public class BuyingScreen extends AppCompatActivity {
                         String BuyItemInfo = jsonResponse.getString("ItemInfo"); // ItemInfo 데이터 저장
                         ItemName.setText(BuyItemName); //구매하려는 아이템 이름으로 변경
                         ItemInfo.setText(BuyItemInfo); //구매하려는 아이템 정보로 변경
+                        DBItemName = jsonResponse.getString("ItemName");//ItemName 데이터 저장
                     } else {//success가 false일 때
                         // 토스트 메세지를 띄워줌
                         Toast.makeText(getApplicationContext(), "서버와 연결이 끊겼습니다", Toast.LENGTH_SHORT).show();
@@ -81,7 +82,7 @@ public class BuyingScreen extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(BuyingScreen.this); // 큐를 생성
         queue.add(validateRequest); // 큐에 추가
 
-        String DBItemName = ItemName.getText().toString();//아이템 이름 받아오기
+
 
         //구매 버튼을 눌렀을때 값 저장, 내 아이템 화면으로 돌아감
         Response.Listener<String> responseListener2 = new Response.Listener<String>() { // 구매 버튼 클릭 이벤트 생성
@@ -152,8 +153,6 @@ public class BuyingScreen extends AppCompatActivity {
                 PHPRequest validateRequest3 = new PHPRequest(purl3, myGameName, Regnum, Uninum, getTextQuan, myCharName, DBItemName, responseListener3);
                 RequestQueue queue3 = Volley.newRequestQueue(BuyingScreen.this); // 큐를 생성
                 queue3.add(validateRequest3);  // 큐에 추가
-                // 토스트 메세지를 띄워줌
-                Toast.makeText(getApplicationContext(), ItemName+getTextQuan+"개를 구매하셨습니다.", Toast.LENGTH_SHORT).show();
                 // BuyingScreen에서 AuctionScreen으로 가는 intent 준비
                 Intent intent = new Intent(getApplicationContext(), AuctionScreen.class);
                 intent.putExtra("account_info", accountInfo); // intent에 게임 계정 데이터 추가
